@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
 }
 
 a:hover,
@@ -18,9 +18,9 @@ a:active {
   padding-left: 5px;
 }
 
-.logo {
-  height: auto;
+#logo {
   width: auto;
-  max-height: 70px;
-  max-width: 70px;
+  height: auto;
+  max-width: 50px;
+  max-height: 50px;
 }

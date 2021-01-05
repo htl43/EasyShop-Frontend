@@ -21,6 +21,9 @@ import { AuthService } from './auth/auth.service';
 import { LogoutConfirmComponent } from './auth/logout-confirm.component';
 import { ExerciseService } from './training/exercise.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CellphoneComponent } from './welcome/category/cellphone/cellphone.component';
+import { TiviComponent } from './welcome/category/tivi/tivi.component';
+import { ProductComponent } from './welcome/product/product.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     SidenavListComponent,
     StopTrainingComponent,
     LogoutConfirmComponent,
+    CellphoneComponent,
+    TiviComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
