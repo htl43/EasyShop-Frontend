@@ -15,6 +15,10 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+<<<<<<< HEAD
+=======
+import {MatMenuModule} from '@angular/material/menu';
+>>>>>>> 39b300109594a502daf4546e316317bb38a9afb7
 
 
 @NgModule({
@@ -34,7 +38,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
         MatSelectModule,
         MatProgressSpinnerModule,
         MatDialogModule,
+<<<<<<< HEAD
         MatGridListModule
+=======
+        MatGridListModule,
+        MatMenuModule
+>>>>>>> 39b300109594a502daf4546e316317bb38a9afb7
     ],
     exports: [
         MatButtonModule,
@@ -52,7 +61,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
         MatSelectModule,
         MatProgressSpinnerModule,
         MatDialogModule,
+<<<<<<< HEAD
         MatGridListModule
+=======
+        MatGridListModule,
+        MatMenuModule
+       
+>>>>>>> 39b300109594a502daf4546e316317bb38a9afb7
     ],
 })
 export class MaterialBuildModule { }

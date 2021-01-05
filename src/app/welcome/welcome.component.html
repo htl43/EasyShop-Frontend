@@ -1,56 +1,43 @@
-<div class="welcome"  fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center"> 
-     
 
-    <h2>Product Details</h2>
-    <br><br>
-    <table class="productable">
-        <thead>
-            <tr>
-                <th scope = "col">Product Id</th>
-                <th scope = "col">Product Name</th>
-                <th scope = "col">Product Details</th>
-                <th scope = "col">Product Price</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="products" fxLayoutGap.gt-md="20px"   >
+    <mat-grid-list cols="3" rowHeight="1:2" >
 
-            <tr *ngFor = "let product of products">
-                <td>{{product.productId}}</td>
-                <td>{{product.productName}}</td>
-                <td>{{product.metaTitle}}</td>
-                <td>{{product.unitPrice}}</td>
+        <mat-grid-tile >
+            <mat-card class="example-card"  routerLink="tv"   >
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>TV Category</mat-card-title>
+                    <mat-card-subtitle>Discount 20%</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
+           </mat-card>
 
+        </mat-grid-tile>
 
-            </tr>
+        <mat-grid-tile >
+            <mat-card class="example-card"  routerLink="computer"  >
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Computer Category</mat-card-title>
+                    <mat-card-subtitle>Discount 40%</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/easy-shop.png" alt="Photo of TV Category">
+           </mat-card>
 
+        </mat-grid-tile>
 
-        </tbody>
+        <mat-grid-tile >
+            <mat-card class="example-card" routerLink="cellphone"  >
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>CellPhone Category</mat-card-title>
+                    <mat-card-subtitle>Discount 50%</mat-card-subtitle>
+                </mat-card-header>
+                  <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category" >
+           </mat-card>
 
-
-    </table>
-
-    <br><br>
-    <table class="categorytable">
-        <thead>
-            <tr>
-                <th scope = "col">Category Id</th>
-                <th scope = "col">Category Name</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr *ngFor = "let product of products">
-                <td>{{product.categoryId.categoryId}}</td>
-                <td>{{product.categoryId.categoryName}}</td>
-            </tr>
-
-
-        </tbody>
-
-
-    </table>
-    
+        </mat-grid-tile>
+    </mat-grid-list>
 
 </div>
 
