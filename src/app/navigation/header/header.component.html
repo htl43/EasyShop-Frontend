@@ -4,7 +4,25 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div><a routerLink="/">LOGO</a></div>
+<<<<<<< HEAD
+  <div>
+    <a routerLink="/">
+      <img src="../../../assets/eshop.png" alt="logo" class="logo">
+    </a>
+  </div>
+=======
+  
+  <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li><a routerLink="/">LOGO</a> </li>
+      <li ><a routerLink="/">Categories</a></li>
+    </ul>
+    
+  
+  </div>
+
+
+>>>>>>> 923ce3ca98bc6df9ccca1cb214077d0dc94dfcd4
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
       <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
