@@ -7,11 +7,23 @@
   
   <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li><img src = "/src/assets/revaturelogo.png" alt = "CompanyLogo"/></li>
       <li><a routerLink="/">LOGO</a> </li>
+      <li><a routerLink="/">EasyShop</a> </li>
       <li ><a routerLink="/">Categories</a></li>
+      <!--
+      <li >
+          <button mat-button [matMenuTriggerFor]="menu">Categories</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>CellPhones</button>
+            <button mat-menu-item>TV</button>
+          </mat-menu> 
+      </li>
+      -->
+      <li ><a routerLink="/cellphone">CellPhones</a></li>
+      <li ><a routerLink="/tv">TV</a></li>
     </ul>
     
-  
   </div>
 
 

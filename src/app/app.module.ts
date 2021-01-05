@@ -21,6 +21,9 @@ import { AuthService } from './auth/auth.service';
 import { LogoutConfirmComponent } from './auth/logout-confirm.component';
 import { ExerciseService } from './training/exercise.service';
 import { HttpClientModule } from '@angular/common/http';
+import {CellphoneComponent} from './products/cellphone/cellphone.component';
+import {TVComponent} from './products/tv/tv.component';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     SidenavListComponent,
     StopTrainingComponent,
     LogoutConfirmComponent,
+    CellphoneComponent,
+    CellphoneComponent
   ],
   imports: [
     BrowserModule,
