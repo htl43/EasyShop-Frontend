@@ -1,14 +1,55 @@
 <div class="welcome"  fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center"> 
-    <section> 
-        <h1>Sale</h1>
-        <p>Stay active and enjoy better health and more fun!</p>
-    </section>
-    <section> 
-        <h1>COMMUNITY</h1>
-        <p>get to know other people who share same passion!</p>
-    </section>
-    <section> 
-        <h1>CHALLENGES</h1>
-        <p>Never stop! Dive into new challenges every day</p>
-    </section>
+     
+
+    <h2>Product Details</h2>
+    <br><br>
+    <table class="productable">
+        <thead>
+            <tr>
+                <th scope = "col">Product Id</th>
+                <th scope = "col">Product Name</th>
+                <th scope = "col">Product Details</th>
+                <th scope = "col">Product Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor = "let product of products">
+                <td>{{product.productId}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.metaTitle}}</td>
+                <td>{{product.unitPrice}}</td>
+
+
+            </tr>
+
+
+        </tbody>
+
+
+    </table>
+
+    <br><br>
+    <table class="categorytable">
+        <thead>
+            <tr>
+                <th scope = "col">Category Id</th>
+                <th scope = "col">Category Name</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor = "let product of products">
+                <td>{{product.categoryId.categoryId}}</td>
+                <td>{{product.categoryId.categoryName}}</td>
+            </tr>
+
+
+        </tbody>
+
+
+    </table>
+    
+
 </div>
