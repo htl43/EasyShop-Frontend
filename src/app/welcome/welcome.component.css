@@ -1,3 +1,13 @@
 .welcome {
   text-align: center;
 }
+
+mat-grid-tile {
+  background: #6610f2;
+  display: inline;
+}
+
+mat-card {
+  background: white;
+  width: 400px;
+}
