@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { User } from '../authModel/user.model';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,14 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  error: string;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      email: new FormControl('', {
-        validators: [Validators.required, Validators.email]
+      username: new FormControl('', {
+        validators: [Validators.required]
       }),
       password: new FormControl('', { validators: [Validators.required] })
     });
@@ -25,6 +27,13 @@ export class LoginComponent implements OnInit {
     this.authService.login({
       username: this.loginForm.value.username,
       password: this.loginForm.value.password
-    });
+    }).subscribe(
+      (data: User) => {
+       this.authService.setUser(data);
+      },
+      (err: any) => {
+        this.error = err.error;
+      }
+    );
   }
 }
