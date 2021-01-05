@@ -1,3 +1,11 @@
 mat-form-field {
   width: 400px;
 }
+
+.row_container {
+  width: 200px;
+}
+
+#register-header {
+  color: #ff6000;
+}
