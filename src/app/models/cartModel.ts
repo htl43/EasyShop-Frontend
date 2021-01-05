@@ -1,4 +1,4 @@
-import { User } from "../auth/user.model";
+import { User } from "../auth/authModel/user.model";
 
 export class Cart {
 
