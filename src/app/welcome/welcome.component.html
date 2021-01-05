@@ -1,90 +1,42 @@
-<div class="welcome"  fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center"> 
-     
 
-    <h2>Product Details</h2>
-    <br><br>
-    <table class="productable">
-        <thead>
-            <tr>
-                <th scope = "col">Product Id</th>
-                <th scope = "col">Product Name</th>
-                <th scope = "col">Product Details</th>
-                <th scope = "col">Product Price</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr *ngFor = "let product of products">
-                <td>{{product.productId}}</td>
-                <td>{{product.productName}}</td>
-                <td>{{product.metaTitle}}</td>
-                <td>{{product.unitPrice}}</td>
-
-
-            </tr>
-
-
-        </tbody>
-
-
-    </table>
-
-
-</div>
-
-<br><br>
-<div class="welcome"  fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
-
-    <table class="categorytable">
-        <thead>
-            <tr>
-                <th scope = "col">Category Id</th>
-                <th scope = "col">Category Name</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr *ngFor = "let product of products">
-                <td>{{product.categoryId.categoryId}}</td>
-                <td>{{product.categoryId.categoryName}}</td>
-            </tr>
-
-
-        </tbody>
-
-
-    </table>
-</div>
-
-
-
-
-<div class="products" fxLayoutGap.gt-md="20px" >
+<div class="products" fxLayoutGap.gt-md="20px"   >
     <mat-grid-list cols="3" rowHeight="1:2" >
 
         <mat-grid-tile >
-            <mat-card class="example-card" >
+            <mat-card class="example-card"  routerLink="tv"   >
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>TV Category</mat-card-title>
-                    <mat-card-subtitle> 20 % Discount</mat-card-subtitle>
+                    <mat-card-subtitle>Discount 20%</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image src="src/app/assests/TVCategory.jpg" alt="Photo of TV Category">
-               <!--
-                <mat-card-content>
-                    <p class="price">
-                    $Placeholder
-                    </p>
-                </mat-card-content>
-                <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
-                    <button mat-button>View</button>
-                    <button mat-button>Add to Cart</button>
-                </mat-card-actions>
-                -->
+                <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
            </mat-card>
+
+        </mat-grid-tile>
+
+        <mat-grid-tile >
+            <mat-card class="example-card"  routerLink="computer"  >
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Computer Category</mat-card-title>
+                    <mat-card-subtitle>Discount 40%</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/easy-shop.png" alt="Photo of TV Category">
+           </mat-card>
+
+        </mat-grid-tile>
+
+        <mat-grid-tile >
+            <mat-card class="example-card" routerLink="cellphone"  >
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>CellPhone Category</mat-card-title>
+                    <mat-card-subtitle>Discount 50%</mat-card-subtitle>
+                </mat-card-header>
+                  <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category" >
+           </mat-card>
+
         </mat-grid-tile>
     </mat-grid-list>
 
 </div>
-

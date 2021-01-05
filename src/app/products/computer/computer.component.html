@@ -1,10 +1,11 @@
-<h1> TV Products</h1>
+<h1>computer works!</h1>
+
 
 <div class="products" fxLayoutGap.gt-md="20px"   >
     <mat-grid-list cols="3" rowHeight="1:2" >
 
         <mat-grid-tile *ngFor = "let product of products" >
-            <mat-card class="example-card" *ngIf = "product.categoryId.categoryId == 2"  >
+            <mat-card class="example-card"  *ngIf = "product.categoryId.categoryId == 3" >
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>{{product.productName}}</mat-card-title>
@@ -13,7 +14,7 @@
                 <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
                 <mat-card-content>
                     <p class="price">
-                    ${{product.unitPrice}}
+                        ${{product.unitPrice}}
                     </p>
                 </mat-card-content>
                 <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
@@ -27,5 +28,3 @@
     </mat-grid-list>
 
 </div>
-
-
