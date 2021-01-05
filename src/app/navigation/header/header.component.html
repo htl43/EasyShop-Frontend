@@ -4,7 +4,17 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div><a routerLink="/">LOGO</a></div>
+  
+  <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li><a routerLink="/">LOGO</a> </li>
+      <li ><a routerLink="/">Categories</a></li>
+    </ul>
+    
+  
+  </div>
+
+
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
       <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>

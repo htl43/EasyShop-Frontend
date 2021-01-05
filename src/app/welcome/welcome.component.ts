@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {Color} from '../models/color';
+import {Size} from '../models/size';
+import {Category} from '../models/category';
+import {Product}  from '../models/product';
+import {ProductService} from '../services/product.service';
+
+
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +14,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  public products:Product[];
+
+  constructor( private productService:ProductService) { }
 
   ngOnInit(): void {
+    this.getAllProduct();
   }
+
+  getAllProduct(){
+
+    this.productService.getAllProduct().subscribe(
+      (data:Product[]) => { 
+        this.products = data;
+      }
+    )
+
+  }
+
 
 }

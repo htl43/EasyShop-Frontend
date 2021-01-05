@@ -22,7 +22,7 @@ export class AuthService {
         let options = {
             headers: this.httpHeaders
         }
-        return this.http.post<any>(regURL, user, options) as Observable<User>;
+        return this.http.post<any>(regURL, user) as Observable<User>;
     }
 
     login(authData: AuthData): void {
