@@ -3,11 +3,19 @@
 }
 
 mat-grid-tile {
-  background: #6610f2;
-  display: inline;
+  background: #620fe7;
+
 }
 
 mat-card {
   background: white;
   width: 400px;
+}
+
+mat-card-title{
+  justify-content: flex-start;
+}
+
+button{
+  background-color: burlywood;
 }

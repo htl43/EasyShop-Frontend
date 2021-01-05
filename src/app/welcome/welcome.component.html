@@ -13,11 +13,12 @@
     </section>
 </div>
 
-<!--WE NEED AN *ngFor here?? and each grid tile will be populated with a product-->
+<!--WE NEED AN *ngFor here!! (once product stuff is ready) and each grid tile will be populated with a product-->
 <!--Images will come from the external API-->
 
 <div class="products" fxLayoutGap.gt-md="20px">
-    <mat-grid-list cols="2" rowHeight="1:2">
+    <mat-grid-list cols="4" rowHeight="1:2">
+
         <mat-grid-tile>
             <mat-card class="example-card">
           <mat-card-header>
@@ -31,7 +32,7 @@
               $Placeholder
             </p>
           </mat-card-content>
-          <mat-card-actions>
+          <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
             <button mat-button>View</button>
             <button mat-button>Add to Cart</button>
           </mat-card-actions>
@@ -40,72 +41,64 @@
       
         <mat-grid-tile>
             <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p>
-                    Cool Thing
-                  </p>
-                  <p class="price">
-                    $Placeholder
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>View</button>
-                  <button mat-button>Add to Cart</button>
-                </mat-card-actions>
-              </mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Product Name</mat-card-title>
+            <mat-card-subtitle>Short Description</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p class="price">
+              $Placeholder
+            </p>
+          </mat-card-content>
+          <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+            <button mat-button>View</button>
+            <button mat-button>Add to Cart</button>
+          </mat-card-actions>
+        </mat-card>
         </mat-grid-tile>
 
         <mat-grid-tile>
             <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p>
-                    Cool Thing
-                  </p>
-                  <p class="price">
-                    $Placeholder
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>View</button>
-                  <button mat-button>Add to Cart</button>
-                </mat-card-actions>
-              </mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Product Name</mat-card-title>
+            <mat-card-subtitle>Short Description</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p class="price">
+              $Placeholder
+            </p>
+          </mat-card-content>
+          <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+            <button mat-button>View</button>
+            <button mat-button>Add to Cart</button>
+          </mat-card-actions>
+        </mat-card>
         </mat-grid-tile>
 
         <mat-grid-tile>
             <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p>
-                    Cool Thing
-                  </p>
-                  <p class="price">
-                    $Placeholder
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>View</button>
-                  <button mat-button>Add to Cart</button>
-                </mat-card-actions>
-              </mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title fxLayout="row" fxLayoutAlign="start">Product Name</mat-card-title>
+            <mat-card-subtitle>Short Description</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p class="price">
+              $Placeholder
+            </p>
+          </mat-card-content>
+          <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+            <button mat-button>View</button>
+            <button mat-button>Add to Cart</button>
+          </mat-card-actions>
+        </mat-card>
         </mat-grid-tile>
-      </mat-grid-list>
+
+    </mat-grid-list>
 
 </div>
