@@ -6,26 +6,27 @@
     [formGroup]="loginForm"
     (ngSubmit)="onSubmit()"
   >
+  <h1 id="login-header">Login your account</h1>
     <mat-form-field>
-      <input
-        type="email"
-        matInput
-        placeholder="Your email"
-        formControlName="email"
-      />
-      <mat-hint>Please enter a valid email.</mat-hint>
-      <mat-error>Invalid or missing email.</mat-error>
+      <input 
+        type="text" 
+        matInput 
+        placeholder="Username" 
+        formControlName="username"
+      >
+      <mat-error>Field must not be empty.</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input
         type="password"
         matInput
-        placeholder="Your password"
+        placeholder="Password"
         formControlName="password"
       />
       <mat-hint>Please enter your password.</mat-hint>
       <mat-error>Missing password.</mat-error>
     </mat-form-field>
+    <mat-error *ngIf="error"> {{ error }} </mat-error>
     <button
       type="submit"
       mat-raised-button

@@ -1,49 +1,59 @@
 <section class="signup-form">
     <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" fxLayoutGap="5px"(ngSubmit)="onSubmit(f)" >
-        <mat-form-field appearance="fill">
+        <h1 id="register-header">Create your account</h1>
+        <mat-form-field>
             <input type="text" matInput placeholder="Username" ngModel name="username" required #usernameInput="ngModel">
             <mat-error *ngIf="usernameInput.hasError('required')" >Field must not be empty.</mat-error>
         </mat-form-field>
-        <mat-form-field hintLabel="Password must at least 6 characters long" appearance="fill">
+        <mat-form-field hintLabel="Password must at least 6 characters long">
             <input type="password" matInput placeholder="Password" ngModel name="password" required minlength="6" #pwInput="ngModel">
             <mat-hint align="end"> {{ pwInput.value?.length }} / 6</mat-hint>
             <mat-error>Password is invalid</mat-error>
-        </mat-form-field>
-        
-        <mat-form-field appearance="fill">
+        </mat-form-field>   
+        <mat-form-field>
             <input type="text" matInput placeholder="Firstname" ngModel name="firstname" required #firstnameInput="ngModel">
             <mat-error *ngIf="firstnameInput.hasError('required')" >Field must not be empty.</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <input type="text" matInput placeholder="Lastname" ngModel name="lastname" required #lastnameInput="ngModel">
             <mat-error *ngIf="lastnameInput.hasError('required')" >Field must not be empty.</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input type="email" matInput placeholder="Email" ngModel name="email" email required #emailInput="ngModel">
-            <mat-error *ngIf="emailInput.hasError('required')" >Field must not be empty.</mat-error>
-            <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input type="tel" matInput placeholder="Phone" ngModel name="phone"  #telInput="ngModel">     
-        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px" class="row_container">
+            <mat-form-field>
+                <input type="email" matInput placeholder="Email" ngModel name="email" email required #emailInput="ngModel">
+                <mat-error *ngIf="emailInput.hasError('required')" >Field must not be empty.</mat-error>
+                <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="tel" matInput placeholder="Phone" ngModel name="phone"  #telInput="ngModel">     
+            </mat-form-field>
+        </div>
+         
         <mat-form-field>
             <input type="text" matInput placeholder="Address1" ngModel name="address1"  #address1Input="ngModel">     
-        </mat-form-field>
+        </mat-form-field >
         <mat-form-field>
             <input type="text" matInput placeholder="Address2" ngModel name="address2"  #address2Input="ngModel">     
         </mat-form-field>
-        <mat-form-field>
-            <input type="text" matInput placeholder="City" ngModel name="city"  #cityInput="ngModel">     
-        </mat-form-field>
-        <mat-form-field>
-            <input type="text" matInput placeholder="State" ngModel name="state"  #stateInput="ngModel">     
-        </mat-form-field>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Zipcode" ngModel name="zipcode"  #zipcodeInput="ngModel">     
-        </mat-form-field>
-        <mat-form-field>
-            <input type="text" matInput placeholder="Country" ngModel name="country"  #countryInput="ngModel">     
-        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px" class="row_container">
+            <mat-form-field >
+                <input type="text" matInput placeholder="City" ngModel name="city"  #cityInput="ngModel">     
+            </mat-form-field>
+            <mat-form-field>
+                <input type="text" matInput placeholder="State" ngModel name="state"  #stateInput="ngModel">     
+            </mat-form-field>
+        </div>
+        
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px" class="row_container">
+            <mat-form-field>
+                <input type="number" matInput placeholder="Zipcode" ngModel name="zipcode" minlength="5" #zipcodeInput="ngModel">     
+            </mat-form-field>
+            <mat-form-field>
+                <input type="text" matInput placeholder="Country" ngModel name="country"  #countryInput="ngModel">     
+            </mat-form-field>
+        </div>
+        <mat-error *ngIf="error"> {{ error }} </mat-error>     
         <mat-checkbox ngModel name="agree" color="primary" required>Agree to Terms and Conditions</mat-checkbox>
         <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Submit</button>
     </form>

@@ -32,5 +32,4 @@ export class WelcomeComponent implements OnInit {
 
   }
 
-
 }
