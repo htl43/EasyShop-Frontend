@@ -27,6 +27,7 @@ export class WelcomeComponent implements OnInit {
     this.productService.getAllProduct().subscribe(
       (data:Product[]) => { 
         this.products = data;
+        this.productService.storeProduct(this.products);
       }
     )
 

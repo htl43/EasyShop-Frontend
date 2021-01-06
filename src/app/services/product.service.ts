@@ -10,11 +10,20 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
+  private products: Product[];
 
   constructor(private http:HttpClient) { }
 
   getAllProduct():Observable<Product[]>{
     return this.http.get("http://localhost:8080/EasyShop/getProduct") as Observable<Product[]>;
+  }
+
+  storeProduct(product: Product[]) {
+    this.products = product;
+  } 
+
+  loadProduct(): Product[] {
+    return this.products;
   }
 
 

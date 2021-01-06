@@ -6,8 +6,12 @@
   </div>
   <div>
     <a routerLink="/">
-      <img src="../../../assets/eshop.png" alt="logo" class="logo">
+      <img src="../../../assets/eshop.png" alt="logo" id="logo">
     </a>
+  </div>
+
+  <div color="primary" >
+    <button>EasyShop</button>
   </div>
 
   <div>
@@ -19,13 +23,30 @@
     </mat-menu>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+    <!-- <ul fxLayout fxLayoutGap="10px" class="navigation-items">
       <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
       <li *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
       <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>
       <li *ngIf="isAuth">
         <a style="cursor: pointer" (click)="onLogout()">Logout</a>
       </li>
-    </ul>
+    </ul> -->
+    <div fxLayout fxLayoutGap="10px" class="navigation-items">
+      <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item  *ngIf="!isAuth" routerLink="/signup">Signup</button>
+        <button mat-menu-item  *ngIf="!isAuth" routerLink="/login">Login</button>
+      </mat-menu> -->
+      <mat-label>Account</mat-label>
+      <mat-select color="primary">
+        <mat-option *ngIf="!isAuth"><a routerLink="/signup">Signup</a></mat-option>
+        <mat-option *ngIf="!isAuth"><a routerLink="/login">Login</a></mat-option>
+        <mat-option *ngIf="isAuth"><a routerLink="/training">Training</a></mat-option>
+        <mat-option *ngIf="isAuth">
+          <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+      </mat-option>
+    </mat-select>
+    </div>
+    
   </div>
 </mat-toolbar>
