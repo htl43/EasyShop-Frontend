@@ -9,13 +9,13 @@
       <img src="../../../assets/eshop.png" alt="logo" id="logo">
     </a>
   </div>
+
   <div>
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <button mat-button [matMenuTriggerFor]="menu">Categories</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="cellphone">Cellphone           
-        </button>
-        <button mat-menu-item routerLink="tv">TV
-        </button>
+        <button mat-menu-item routerLink="cellphone">Cellphone </button>
+        <button mat-menu-item routerLink="tv">TV</button>
+        <button mat-menu-item routerLink="computer">Computer</button>
     </mat-menu>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>

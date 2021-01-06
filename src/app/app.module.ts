@@ -21,9 +21,10 @@ import { AuthService } from './auth/auth.service';
 import { LogoutConfirmComponent } from './auth/logout-confirm.component';
 import { ExerciseService } from './training/exercise.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CellphoneComponent } from './welcome/category/cellphone/cellphone.component';
-import { TiviComponent } from './welcome/category/tivi/tivi.component';
-import { ProductComponent } from './welcome/product/product.component';
+import {CellphoneComponent} from './products/cellphone/cellphone.component';
+import {TVComponent} from './products/tv/tv.component';
+import {ComputerComponent} from './products/computer/computer.component';
+
 
 @NgModule({
   declarations: [
@@ -40,8 +41,8 @@ import { ProductComponent } from './welcome/product/product.component';
     StopTrainingComponent,
     LogoutConfirmComponent,
     CellphoneComponent,
-    TiviComponent,
-    ProductComponent
+    TVComponent,
+    ComputerComponent
   ],
   imports: [
     BrowserModule,

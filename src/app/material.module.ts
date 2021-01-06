@@ -14,8 +14,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
     imports: [
@@ -34,8 +35,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
         MatSelectModule,
         MatProgressSpinnerModule,
         MatDialogModule,
-        MatMenuModule,
-        MatGridListModule
+        MatGridListModule,
+        MatMenuModule
     ],
     exports: [
         MatButtonModule,
@@ -53,8 +54,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
         MatSelectModule,
         MatProgressSpinnerModule,
         MatDialogModule,
-        MatMenuModule,
-        MatListModule
+        MatGridListModule,
+        MatMenuModule
+       
     ],
 })
 export class MaterialBuildModule { }
