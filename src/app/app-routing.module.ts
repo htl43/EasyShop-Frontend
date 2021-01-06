@@ -9,6 +9,8 @@ import { AuthGuath } from './auth/auth.guard';
 import {CellphoneComponent} from './products/cellphone/cellphone.component';
 import { TVComponent } from './products/tv/tv.component';
 import { ComputerComponent } from './products/computer/computer.component';
+import { AccountComponent } from './auth/account/account.component';
+import { CartComponent } from './auth/account/cart/cart.component';
 
 
 
@@ -16,10 +18,11 @@ const routes: Routes = [
     { path: '', component: WelcomeComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'training', component: TrainingComponent, canActivate: [AuthGuath] },
+    { path: 'account', component: AccountComponent, canActivate: [AuthGuath] },
     { path: 'cellphone', component: CellphoneComponent },
     { path: 'tv', component: TVComponent },
-    { path: 'computer', component: ComputerComponent }
+    { path: 'computer', component: ComputerComponent },
+    { path: 'cart', component: CartComponent }
 ];
 
 @NgModule({

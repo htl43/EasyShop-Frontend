@@ -24,6 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {CellphoneComponent} from './products/cellphone/cellphone.component';
 import { TVComponent } from './products/tv/tv.component';
 import { ComputerComponent } from './products/computer/computer.component';
+import { AccountComponent } from './auth/account/account.component';
+import { CartComponent } from './auth/account/cart/cart.component';
+import { ProfileComponent } from './auth/account/profile/profile.component';
+import { UpdateComponent } from './auth/account/update/update.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { ComputerComponent } from './products/computer/computer.component';
     LogoutConfirmComponent,
     CellphoneComponent,
     TVComponent,
-    ComputerComponent
+    ComputerComponent,
+    AccountComponent,
+    CartComponent,
+    ProfileComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

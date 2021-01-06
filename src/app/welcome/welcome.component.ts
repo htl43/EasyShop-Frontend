@@ -23,7 +23,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   getAllProduct(){
-
     this.productService.getAllProduct().subscribe(
       (data:Product[]) => { 
         this.products = data;

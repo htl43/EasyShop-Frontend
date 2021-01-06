@@ -10,10 +10,6 @@
     </a>
   </div>
 
-  <div color="primary" >
-    <button>EasyShop</button>
-  </div>
-
   <div>
     <button mat-button [matMenuTriggerFor]="menu">Categories</button>
       <mat-menu #menu="matMenu">
@@ -22,8 +18,11 @@
         <button mat-menu-item routerLink="computer">Computer</button>
     </mat-menu>
   </div>
+
+  
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <div fxLayout fxLayoutGap="10px" class="navigation-items">
+      <mat-icon *ngIf="isAuth" style="cursor: pointer" routerLink="/cart" class="material-icons-outlined">shopping_cart</mat-icon>
       <mat-label >
         <mat-icon class="material-icons-outlined">account_circle</mat-icon>
         <span>Account</span>
@@ -35,8 +34,8 @@
         <mat-option *ngIf="!isAuth" routerLink="/login">
           Login
         </mat-option>
-        <mat-option *ngIf="isAuth" routerLink="/training">
-          Training
+        <mat-option *ngIf="isAuth" routerLink="/account">
+          Account
         </mat-option>
         <mat-option *ngIf="isAuth">
           <a style="cursor: pointer" (click)="onLogout()">Logout</a>
