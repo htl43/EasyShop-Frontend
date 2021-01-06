@@ -6,9 +6,10 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { TrainingComponent } from './training/training.component';
 import { AuthGuath } from './auth/auth.guard';
-import {CellphoneComponent} from './welcome/category/cellphone/cellphone.component';
-import {TVComponent} from './welcome/category/tv/tv.component';
-import {ComputerComponent} from './welcome/category/computer/computer.component';
+import {CellphoneComponent} from './products/cellphone/cellphone.component';
+import { TVComponent } from './welcome/category/tv/tv.component';
+import { ComputerComponent } from './welcome/category/computer/computer.component';
+
 
 
 const routes: Routes = [

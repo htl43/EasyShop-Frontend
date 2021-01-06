@@ -35,8 +35,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatSelectModule,
         MatProgressSpinnerModule,
         MatDialogModule,
-        MatGridListModule,
-        MatMenuModule
+        MatMenuModule,
+        MatGridListModule
     ],
     exports: [
         MatButtonModule,
@@ -54,9 +54,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatSelectModule,
         MatProgressSpinnerModule,
         MatDialogModule,
-        MatGridListModule,
-        MatMenuModule
-       
+        MatMenuModule,
+        MatGridListModule
     ],
 })
 export class MaterialBuildModule { }

@@ -5,15 +5,15 @@ import {Category} from 'src/app/models/category';
 import {Product}  from 'src/app/models/product';
 import {ProductService} from 'src/app/services/product.service';
 
-
 @Component({
-  selector: 'app-tv',
-  templateUrl: './tv.component.html',
-  styleUrls: ['./tv.component.css']
+  selector: 'app-cellphone',
+  templateUrl: './cellphone.component.html',
+  styleUrls: ['./cellphone.component.css']
 })
-export class TVComponent implements OnInit {
+export class CellphoneComponent implements OnInit {
 
   public products:Product[];
+  public cellProduct:Product[];
 
   constructor(private productService:ProductService) { }
 
@@ -22,15 +22,13 @@ export class TVComponent implements OnInit {
   }
 
   getAllProduct(){
-
     this.productService.getAllProduct().subscribe(
       (data:Product[]) => { 
         this.products = data;
       }
     )
-
   }
 
-
+  
 
 }
