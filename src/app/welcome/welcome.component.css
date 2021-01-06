@@ -2,20 +2,15 @@
   text-align: center;
 }
 
-mat-grid-tile {
-  background: #620fe7;
-
-}
-
 mat-card {
   background: white;
   width: 400px;
 }
 
-mat-card-title{
+mat-card-title {
   justify-content: flex-start;
 }
 
-button{
+button {
   background-color: burlywood;
 }
