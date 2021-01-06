@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {CellphoneComponent} from './products/cellphone/cellphone.component';
 import {TVComponent} from './products/tv/tv.component';
 import {ComputerComponent} from './products/computer/computer.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {ComputerComponent} from './products/computer/computer.component';
     LogoutConfirmComponent,
     CellphoneComponent,
     TVComponent,
-    ComputerComponent
+    ComputerComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
