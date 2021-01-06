@@ -14,34 +14,30 @@
       <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="cellphone">Cellphone           
         </button>
-        <button mat-menu-item label="TV">TV
+        <button mat-menu-item routerLink="tv">TV
         </button>
     </mat-menu>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-    <!-- <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-      <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
-      <li *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
-      <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>
-      <li *ngIf="isAuth">
-        <a style="cursor: pointer" (click)="onLogout()">Logout</a>
-      </li>
-    </ul> -->
     <div fxLayout fxLayoutGap="10px" class="navigation-items">
-      <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item  *ngIf="!isAuth" routerLink="/signup">Signup</button>
-        <button mat-menu-item  *ngIf="!isAuth" routerLink="/login">Login</button>
-      </mat-menu> -->
-      <mat-label>Account</mat-label>
+      <mat-label >
+        <mat-icon class="material-icons-outlined">account_circle</mat-icon>
+        <span>Account</span>
+      </mat-label>
       <mat-select color="primary">
-        <mat-option *ngIf="!isAuth"><a routerLink="/signup">Signup</a></mat-option>
-        <mat-option *ngIf="!isAuth"><a routerLink="/login">Login</a></mat-option>
-        <mat-option *ngIf="isAuth"><a routerLink="/training">Training</a></mat-option>
+        <mat-option *ngIf="!isAuth" routerLink="/signup">
+          Signup
+        </mat-option>
+        <mat-option *ngIf="!isAuth" routerLink="/login">
+          Login
+        </mat-option>
+        <mat-option *ngIf="isAuth" routerLink="/training">
+          Training
+        </mat-option>
         <mat-option *ngIf="isAuth">
           <a style="cursor: pointer" (click)="onLogout()">Logout</a>
       </mat-option>
-    </mat-select>
+      </mat-select>
     </div>
     
   </div>

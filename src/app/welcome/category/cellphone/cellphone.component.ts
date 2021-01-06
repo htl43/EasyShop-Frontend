@@ -12,11 +12,8 @@ export class CellphoneComponent implements OnInit {
   allProducts: any;
   constructor(private productService: ProductService) { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
     this.allProducts = this.productService.loadProduct();
-    for(let p of this.allProducts) {
-      console.log(p);
-    }
   }
 
 }

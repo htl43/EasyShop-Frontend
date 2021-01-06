@@ -7,6 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { TrainingComponent } from './training/training.component';
 import { AuthGuath } from './auth/auth.guard';
 import { CellphoneComponent } from './welcome/category/cellphone/cellphone.component';
+import { TiviComponent } from './welcome/category/tivi/tivi.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     // { path: 'training', component: TrainingComponent, canActivate: [AuthGuath] },
     { path: 'cellphone', component: CellphoneComponent },
+    { path: 'tv', component: TiviComponent },
 ];
 
 @NgModule({
