@@ -13,6 +13,7 @@ import {ProductService} from 'src/app/services/product.service';
 export class CellphoneComponent implements OnInit {
 
   public products:Product[];
+  public cellProduct:Product[];
 
   constructor(private productService:ProductService) { }
 
@@ -21,12 +22,13 @@ export class CellphoneComponent implements OnInit {
   }
 
   getAllProduct(){
-
     this.productService.getAllProduct().subscribe(
       (data:Product[]) => { 
         this.products = data;
       }
     )
-
   }
+
+  
+
 }

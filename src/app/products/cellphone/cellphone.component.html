@@ -1,33 +1,251 @@
-<h2>cellphone works!</h2>
-
 
 <!--WE NEED AN *ngFor here!! (once product stuff is ready) and each grid tile will be populated with a product-->
 <!--Images will come from the external API-->
+<!--
+<div class="float-container">
 
+    <div class="float-child">
+      <div class="green">Float Column 1</div>
+    </div>
+    
+    <div class="float-child">
+      <div class="blue">
+            <div class="products" fxLayoutGap.gt-md="20px"   style="width:500px" >
+                <mat-grid-list cols="3" rowHeight="1:2" >
+
+                    <mat-grid-tile *ngFor = "let product of products" >
+                        <mat-card class="example-card"  *ngIf = "product.categoryId.categoryId == 1" >
+                            <mat-card-header>
+                                <div mat-card-avatar class="example-header-image"></div>
+                                <mat-card-title>{{product.productName}}</mat-card-title>
+                                <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
+                            <mat-card-content>
+                                <p class="price">
+                                    ${{product.unitPrice}}
+                                </p>
+                            </mat-card-content>
+                            <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+                                <button mat-button>View</button>
+                                <button mat-button>Add to Cart</button>
+                            </mat-card-actions>
+                    
+                    </mat-card>
+
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+            </div>
+ 
+        </div>
+    </div>
+    
+</div>
+-->
+<!--
+<div style="background-color: lightblue;">
+    <div style="width:400px;height:400px; background-color:red; float:left;">
+           this is first div
+    </div>
+
+     <div class="products" fxLayoutGap.gt-md="20px"   style="width:500px;float:right;" >
+                        <mat-grid-list cols="3" rowHeight="1:2" >
+
+                            <mat-grid-tile *ngFor = "let product of products" >
+                                <mat-card class="example-card"  *ngIf = "product.categoryId.categoryId == 1" >
+                                    <mat-card-header>
+                                        <div mat-card-avatar class="example-header-image"></div>
+                                        <mat-card-title>{{product.productName}}</mat-card-title>
+                                        <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+                                    </mat-card-header>
+                                    <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
+                                    <mat-card-content>
+                                        <p class="price">
+                                            ${{product.unitPrice}}
+                                        </p>
+                                    </mat-card-content>
+                                    <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+                                        <button mat-button>View</button>
+                                        <button mat-button>Add to Cart</button>
+                                    </mat-card-actions>
+                            
+                            </mat-card>
+
+                            </mat-grid-tile>
+                        </mat-grid-list>
+
+    </div>
+  
+</div>
+-->
+<!--
+<table>
+
+    <tbody>
+        <tr>
+           <td id ="firstcolumn" >
+               <div>
+                 <section class="example-section">
+                    <mat-checkbox class="example-margin">32 inch</mat-checkbox><br>
+                    <mat-checkbox class="example-margin">43 inch</mat-checkbox><br>
+                    <mat-checkbox class="example-margin">55 inch</mat-checkbox><br>
+                  </section>
+               </div>
+
+               <div>
+                <section class="example-section">
+                   <mat-checkbox class="example-margin">Red</mat-checkbox><br>
+                   <mat-checkbox class="example-margin">Grey</mat-checkbox><br>
+                   <mat-checkbox class="example-margin">Black</mat-checkbox><br>
+                 </section>
+              </div>
+           
+           </td>
+           <td id ="secondcolum"> 
+                    <div class="products"  style = "width: 500px;" >
+                                <mat-grid-list fxLayout="row" fxLayoutGap="20px"  cols="2" rowHeight="1:2" >
+
+                                    <mat-grid-tile *ngFor = "let product of products" >
+                                        <mat-card class="example-card"  *ngIf = "product.categoryId.categoryId == 1" >
+                                            <mat-card-header>
+                                                <div mat-card-avatar class="example-header-image"></div>
+                                                <mat-card-title>{{product.productName}}</mat-card-title>
+                                                <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+                                            </mat-card-header>
+                                            <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
+                                            <mat-card-content>
+                                                <p class="price">
+                                                    ${{product.unitPrice}}
+                                                </p>
+                                            </mat-card-content>
+                                            <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+                                                <button mat-button>View</button>
+                                                <button mat-button>Add to Cart</button>
+                                            </mat-card-actions>
+                                    
+                                    </mat-card>
+
+                                    </mat-grid-tile>
+                                </mat-grid-list>
+
+                    </div>
+
+           </td>
+
+        </tr>
+    </tbody>
+</table>
+
+-->
+
+
+<!--
+<div id = "header">
+    <h2>Cell Phone Category</h2>
+</div>
 <div class="products" fxLayoutGap.gt-md="20px"   >
-    <mat-grid-list cols="2" rowHeight="1:2" >
+    <mat-grid-list cols="4" rowHeight="1:2" >
 
-        <mat-grid-tile *ngFor = "let product of products" >
-            <mat-card class="example-card"  *ngIf = "product.categoryId.categoryId == 1" >
+        <mat-grid-tile colspan="1" >
+            <mat-card class="example-card"  routerLink="tv"   >
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{product.productName}}</mat-card-title>
-                    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+                    <mat-card-title>Cell Phone Category</mat-card-title>
+                    <mat-card-subtitle>Discount 20%</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
-                <mat-card-content>
-                    <p class="price">
-                        ${{product.unitPrice}}
-                    </p>
-                </mat-card-content>
-                <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
-                    <button mat-button>View</button>
-                    <button mat-button>Add to Cart</button>
-                </mat-card-actions>
-           
+                <img mat-card-image src="../../../assets/cellphone.jpg" alt="Photo of TV Category">
            </mat-card>
 
         </mat-grid-tile>
+
+
+
+        <mat-grid-tile colspan = "3"  >
+           
+                    <div *ngFor = "let product of products">
+                            <mat-card class="example-card"  *ngIf = "product.categoryId.categoryId == 1" >
+                                <mat-card-header>
+                                    <div mat-card-avatar class="example-header-image"></div>
+                                    <mat-card-title>{{product.productName}}</mat-card-title>
+                                    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+                                </mat-card-header>
+                                <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
+                                <mat-card-content>
+                                    <p class="price">
+                                        ${{product.unitPrice}}
+                                    </p>
+                                </mat-card-content>
+                                <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+                                    <button mat-button>View</button>
+                                    <button mat-button>Add to Cart</button>
+                                </mat-card-actions>
+                        
+                            </mat-card>
+                   </div>
+           
+        </mat-grid-tile>
+
+      
+    </mat-grid-list>
+
+</div>
+
+-->
+
+<div id = "header">
+    <h2>Cell Phone Category</h2>
+</div>
+
+<div id = "search">
+    <div>
+        <section class="example-section">
+           <mat-checkbox class="example-margin">32 inch</mat-checkbox>
+           <mat-checkbox class="example-margin">43 inch</mat-checkbox>
+           <mat-checkbox class="example-margin">55 inch</mat-checkbox>
+         </section>
+
+         <section class="example-section">
+       
+            <mat-checkbox class="example-margin">Red</mat-checkbox>
+            <mat-checkbox class="example-margin">Grey</mat-checkbox>
+            <mat-checkbox class="example-margin">Black</mat-checkbox>
+          </section>
+      </div>
+
+      
+</div>
+
+<div class="products" fxLayoutGap.gt-md="20px"   >
+    <mat-grid-list cols="4" rowHeight="1:1.5" >
+
+        <div *ngFor = "let product of products" >
+             <mat-grid-tile  *ngIf = "product.categoryId.categoryId == 1" >
+           
+                   
+                            <mat-card class="example-card"  >
+                                <mat-card-header>
+                                    <div mat-card-avatar class="example-header-image"></div>
+                                    <mat-card-title>{{product.productName}}</mat-card-title>
+                                    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+                                </mat-card-header>
+                                <img mat-card-image src="../../../assets/cellphone.jpg" alt="Photo of TV Category">
+                                <mat-card-content>
+                                    <p class="price">
+                                        ${{product.unitPrice}}
+                                    </p>
+                                </mat-card-content>
+                                <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+                                    <button mat-button>View</button>
+                                    <button mat-button>Add to Cart</button>
+                                </mat-card-actions>
+                        
+                            </mat-card>
+                   
+           
+             </mat-grid-tile>
+
+        </div>
     </mat-grid-list>
 
 </div>
