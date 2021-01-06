@@ -38,6 +38,7 @@ export class SignupComponent implements OnInit {
         this.authService.registerSuccessfully();
     },
       (err: any) => {
+        console.log(JSON.stringify(err));
         this.error = err.error;
       }
     );

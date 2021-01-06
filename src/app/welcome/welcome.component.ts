@@ -7,6 +7,7 @@ import {ProductService} from '../services/product.service';
 
 
 
+
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -27,6 +28,7 @@ export class WelcomeComponent implements OnInit {
     this.productService.getAllProduct().subscribe(
       (data:Product[]) => { 
         this.products = data;
+        this.productService.storeProduct(this.products);
       }
     )
 

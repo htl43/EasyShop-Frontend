@@ -4,33 +4,50 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-<<<<<<< HEAD
   <div>
     <a routerLink="/">
-      <img src="../../../assets/eshop.png" alt="logo" class="logo">
+      <img src="../../../assets/eshop.png" alt="logo" id="logo">
     </a>
   </div>
-=======
-  
-  <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
-    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-      <li><a routerLink="/">LOGO</a> </li>
-      <li ><a routerLink="/">Categories</a></li>
-    </ul>
-    
-  
+
+  <div color="primary" >
+    <button>EasyShop</button>
   </div>
 
-
->>>>>>> 923ce3ca98bc6df9ccca1cb214077d0dc94dfcd4
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Categories</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="cellphone">Cellphone </button>
+        <button mat-menu-item routerLink="tv">TV</button>
+        <button mat-menu-item routerLink="computer">Computer</button>
+    </mat-menu>
+    <button mat-button routerLink="cart">View Cart</button>
+  </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+    <!-- <ul fxLayout fxLayoutGap="10px" class="navigation-items">
       <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
       <li *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
       <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>
       <li *ngIf="isAuth">
         <a style="cursor: pointer" (click)="onLogout()">Logout</a>
       </li>
-    </ul>
+    </ul> -->
+    <div fxLayout fxLayoutGap="10px" class="navigation-items">
+      <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item  *ngIf="!isAuth" routerLink="/signup">Signup</button>
+        <button mat-menu-item  *ngIf="!isAuth" routerLink="/login">Login</button>
+      </mat-menu> -->
+      <mat-label>Account</mat-label>
+      <mat-select color="primary">
+        <mat-option *ngIf="!isAuth"><a routerLink="/signup">Signup</a></mat-option>
+        <mat-option *ngIf="!isAuth"><a routerLink="/login">Login</a></mat-option>
+        <mat-option *ngIf="isAuth"><a routerLink="/training">Training</a></mat-option>
+        <mat-option *ngIf="isAuth">
+          <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+      </mat-option>
+    </mat-select>
+    </div>
+    
   </div>
 </mat-toolbar>
