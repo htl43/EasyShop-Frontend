@@ -50,6 +50,7 @@ import { UpdateComponent } from './auth/account/update/update.component';
     CartComponent,
     ProfileComponent,
     UpdateComponent
+
   ],
   imports: [
     BrowserModule,
