@@ -13,7 +13,7 @@ import { User } from '../authModel/user.model';
 })
 export class SignupComponent implements OnInit {
   user: User;
-  error: string;
+  error: any;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -38,8 +38,11 @@ export class SignupComponent implements OnInit {
         this.authService.registerSuccessfully();
     },
       (err: any) => {
-        console.log(JSON.stringify(err));
         this.error = err.error;
+        console.log("sign-up-error: " + this.error);
+        if(this.error.isTrusted === true) {
+          console.log("status error true");
+        }
       }
     );
   }

@@ -7,16 +7,18 @@ import { LoginComponent } from './auth/login/login.component';
 import { TrainingComponent } from './training/training.component';
 import { AuthGuath } from './auth/auth.guard';
 import {CellphoneComponent} from './products/cellphone/cellphone.component';
-import {TVComponent} from './products/tv/tv.component';
-import {ComputerComponent} from './products/computer/computer.component';
-import { CartComponent } from './cart/cart.component';
+
+import { TVComponent } from './products/tv/tv.component';
+import { ComputerComponent } from './products/computer/computer.component';
+import { AccountComponent } from './auth/account/account.component';
+import { CartComponent } from './auth/account/cart/cart.component';
 
 
 const routes: Routes = [
     { path: '', component: WelcomeComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'training', component: TrainingComponent, canActivate: [AuthGuath] },
+    { path: 'account', component: AccountComponent, canActivate: [AuthGuath] },
     { path: 'cellphone', component: CellphoneComponent },
     { path: 'tv', component: TVComponent },
     { path: 'computer', component: ComputerComponent },

@@ -18,7 +18,7 @@ export class TVComponent implements OnInit {
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
-    this.getAllProduct();
+    this.products = this.productService.loadProduct();
   }
 
   getAllProduct(){

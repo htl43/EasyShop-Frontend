@@ -37,6 +37,7 @@ export class AuthService {
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
                 this.user = null;
+                this.authChange.next(false);
                 this.router.navigate(['/login']);
             }
           });
@@ -56,7 +57,8 @@ export class AuthService {
     }
 
     private loginSuccessfully(): void {
-        this.router.navigate(['/training']);
+        this.authChange.next(true);
+        this.router.navigate(['/account']);
     }
 
     registerSuccessfully(): void {

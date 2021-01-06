@@ -10,7 +10,7 @@ import { User } from '../authModel/user.model';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  error: string;
+  error: any;
 
   constructor(private authService: AuthService) {}
 
@@ -33,9 +33,10 @@ export class LoginComponent implements OnInit {
       },
       (err: any) => {
         this.error = err.error;
-        if(this.error) {
-          console.log("this error" + JSON.stringify(this.error));
-        }     
+        console.log("sign-up-error: " + this.error);
+        if(this.error.isTrusted === true) {
+          console.log("status error true");
+        }    
       }
     );
   }
