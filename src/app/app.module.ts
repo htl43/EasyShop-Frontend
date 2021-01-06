@@ -22,10 +22,8 @@ import { LogoutConfirmComponent } from './auth/logout-confirm.component';
 import { ExerciseService } from './training/exercise.service';
 import { HttpClientModule } from '@angular/common/http';
 import {CellphoneComponent} from './products/cellphone/cellphone.component';
-import { TVComponent } from './welcome/category/tv/tv.component';
-import { ComputerComponent } from './welcome/category/computer/computer.component';
-
-
+import { TVComponent } from './products/tv/tv.component';
+import { ComputerComponent } from './products/computer/computer.component';
 
 @NgModule({
   declarations: [
