@@ -21,9 +21,9 @@ import { AuthService } from './auth/auth.service';
 import { LogoutConfirmComponent } from './auth/logout-confirm.component';
 import { ExerciseService } from './training/exercise.service';
 import { HttpClientModule } from '@angular/common/http';
-import {CellphoneComponent} from './products/cellphone/cellphone.component';
-import {TVComponent} from './products/tv/tv.component';
-import {ComputerComponent} from './products/computer/computer.component';
+import {CellphoneComponent} from './productsModel/cellphone/cellphone.component';
+import {TVComponent} from './productsModel/tv/tv.component';
+import {ComputerComponent} from './productsModel/computer/computer.component';
 
 
 @NgModule({

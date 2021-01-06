@@ -6,9 +6,9 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { TrainingComponent } from './training/training.component';
 import { AuthGuath } from './auth/auth.guard';
-import {CellphoneComponent} from './products/cellphone/cellphone.component';
-import {TVComponent} from './products/tv/tv.component';
-import {ComputerComponent} from './products/computer/computer.component';
+import {CellphoneComponent} from './productsModel/cellphone/cellphone.component';
+import {TVComponent} from './productsModel/tv/tv.component';
+import {ComputerComponent} from './productsModel/computer/computer.component';
 
 
 const routes: Routes = [
