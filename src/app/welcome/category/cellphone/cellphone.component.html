@@ -1,2 +1,33 @@
-<p>cellphone works!</p>
-<app-product></app-product>
+<h2>cellphone works!</h2>
+
+
+<!--WE NEED AN *ngFor here!! (once product stuff is ready) and each grid tile will be populated with a product-->
+<!--Images will come from the external API-->
+
+<div class="products" fxLayoutGap.gt-md="20px"   >
+    <mat-grid-list cols="3" rowHeight="1:2" >
+
+        <mat-grid-tile *ngFor = "let product of products" >
+            <mat-card class="example-card"  *ngIf = "product.categoryId.categoryId == 1" >
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{product.productName}}</mat-card-title>
+                    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/TVCategory.jpg" alt="Photo of TV Category">
+                <mat-card-content>
+                    <p class="price">
+                        ${{product.unitPrice}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+                    <button mat-button>View</button>
+                    <button mat-button>Add to Cart</button>
+                </mat-card-actions>
+           
+           </mat-card>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>

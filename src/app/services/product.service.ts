@@ -20,6 +20,7 @@ export class ProductService {
 
   storeProduct(product: Product[]) {
     this.products = product;
+    console.log(this.products);
   } 
 
   loadProduct(): Product[] {

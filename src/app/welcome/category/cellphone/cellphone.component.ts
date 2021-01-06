@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
-import { ProductService } from '../../../services/product.service';
+import {Color} from 'src/app/models/color';
+import {Size} from 'src/app/models/size';
+import {Category} from 'src/app/models/category';
+import {Product}  from 'src/app/models/product';
+import {ProductService} from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-cellphone',
@@ -8,12 +11,22 @@ import { ProductService } from '../../../services/product.service';
   styleUrls: ['./cellphone.component.css']
 })
 export class CellphoneComponent implements OnInit {
-  cellphones: Product[];
-  allProducts: any;
-  constructor(private productService: ProductService) { }
+
+  public products:Product[];
+
+  constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
-    this.allProducts = this.productService.loadProduct();
+    this.getAllProduct();
   }
 
+  getAllProduct(){
+
+    this.productService.getAllProduct().subscribe(
+      (data:Product[]) => { 
+        this.products = data;
+      }
+    )
+
+  }
 }

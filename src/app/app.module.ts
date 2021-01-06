@@ -21,9 +21,10 @@ import { AuthService } from './auth/auth.service';
 import { LogoutConfirmComponent } from './auth/logout-confirm.component';
 import { ExerciseService } from './training/exercise.service';
 import { HttpClientModule } from '@angular/common/http';
-import {CellphoneComponent} from './productsModel/cellphone/cellphone.component';
-import {TVComponent} from './productsModel/tv/tv.component';
-import {ComputerComponent} from './productsModel/computer/computer.component';
+import {CellphoneComponent} from './welcome/category/cellphone/cellphone.component';
+import {TVComponent} from './welcome/category/tv/tv.component';
+import {ComputerComponent} from './welcome/category/computer/computer.component';
+import { ProductComponent } from './welcome/product/product.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {ComputerComponent} from './productsModel/computer/computer.component';
     LogoutConfirmComponent,
     CellphoneComponent,
     TVComponent,
-    ComputerComponent
+    ComputerComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
