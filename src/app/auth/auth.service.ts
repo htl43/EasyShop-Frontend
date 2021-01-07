@@ -11,13 +11,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class AuthService {
     private user: User;
-    regMessage: string;
+    regMessage="";
     authChange = new Subject<boolean>();
     baseURL="http://localhost:8080/EasyShop";
     options = {
         headers: new HttpHeaders({
             'Content-Type' : 'application/json'
-        })
+        }),
+        withCredentials: true
     };
 
     constructor(private router: Router, private dialog: MatDialog, private http: HttpClient) {}
@@ -65,5 +66,10 @@ export class AuthService {
     registerSuccessfully(): void {
         this.regMessage = "Register account successful";
         this.router.navigate(['/login']);
+    }
+
+    updateSuccessfully() {
+        this.regMessage = "Update account successful";
+        this.router.navigate(['/account']);
     }
 }

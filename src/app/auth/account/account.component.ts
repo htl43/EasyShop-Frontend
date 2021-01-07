@@ -8,7 +8,6 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
