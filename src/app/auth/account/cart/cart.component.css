@@ -1,0 +1,24 @@
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+    border: 2px solid black;
+
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td{
+    text-align:center;
+    background-color:aliceblue;
+}
+
+img{
+    width:200px;
+    height:200px;
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+}
