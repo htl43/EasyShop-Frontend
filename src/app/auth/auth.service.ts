@@ -44,7 +44,7 @@ export class AuthService {
     }
 
     getUser(): User {
-        return { ...this.user };
+        return this.user;
     }
 
     setUser(user: User) {
