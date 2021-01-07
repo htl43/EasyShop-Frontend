@@ -38,11 +38,7 @@ export class SignupComponent implements OnInit {
         this.authService.registerSuccessfully();
     },
       (err: any) => {
-        this.error = err.error;
-        console.log("sign-up-error: " + this.error);
-        if(this.error.isTrusted === true) {
-          console.log("status error true");
-        }
+        this.error = "Can't create account";
       }
     );
   }

@@ -44,11 +44,12 @@ export class AuthService {
     }
 
     getUser(): User {
-        return { ...this.user };
+        return this.user;
     }
 
     setUser(user: User) {
         this.user = user;
+        console.log(user);
         this.loginSuccessfully();
     }
 
