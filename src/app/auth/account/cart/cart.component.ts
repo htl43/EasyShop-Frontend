@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { emit } from 'process';
 import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -28,6 +29,10 @@ export class CartComponent implements OnInit {
 
   addToCart(){
     //TO FILL WITH ADD TO CART FUNCTIONALITY
+  }
+
+  removeItem(){
+    this.cartservice.removeCartItem(); //how to get the emit() in the method argument
   }
 
 }

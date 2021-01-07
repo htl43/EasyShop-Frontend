@@ -15,7 +15,13 @@ export class CartService {
   }
 
   addCartItem():void{
-    
+
+  }
+
+  removeCartItem(cart:Cart): void{
+    let body: Cart = cart;
+    this.http.post('http://localhost:8080/EasyShop/removeCartItem') as Observable<Cart>;
+    //this is wrong 
   }
 
 }
