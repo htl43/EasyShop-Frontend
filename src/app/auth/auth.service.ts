@@ -49,6 +49,7 @@ export class AuthService {
 
     setUser(user: User) {
         this.user = user;
+        console.log(user);
         this.loginSuccessfully();
     }
 

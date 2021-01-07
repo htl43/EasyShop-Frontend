@@ -32,11 +32,9 @@ export class LoginComponent implements OnInit {
        this.authService.setUser(data);
       },
       (err: any) => {
-        this.error = err.error;
-        console.log("sign-up-error: " + this.error);
-        if(this.error.isTrusted === true) {
-          console.log("status error true");
-        }    
+        (err: any) => {
+          this.error = "Can't login account";
+        }
       }
     );
   }
