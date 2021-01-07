@@ -4,13 +4,11 @@ import {Size} from 'src/app/models/size';
 import {Category} from 'src/app/models/category';
 import {Product}  from 'src/app/models/product';
 import {ProductService} from 'src/app/services/product.service';
-<<<<<<< HEAD
 import { Cart } from 'src/app/models/cart';
 import { User } from 'src/app/auth/authModel/user.model';
-=======
-import { AuthService } from '../../auth/auth.service';
 import { Subscription } from 'rxjs/Subscription';
->>>>>>> 888fe1cb829c92e889237f697d8adfb674ad7ab5
+import { AuthService } from 'src/app/auth/auth.service';
+
 
 @Component({
   selector: 'app-cellphone',
@@ -18,8 +16,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./cellphone.component.css']
 })
 export class CellphoneComponent implements OnInit {
-  isAuth = false;
-  authSubscription: Subscription;
+
   public products:Product[];
   public cellProduct:Product[];
   public cart:Cart;
@@ -27,6 +24,10 @@ export class CellphoneComponent implements OnInit {
   private cartDate:Date;
   private user:User;
   private product:Product;
+ 
+
+  isAuth = false;
+  authSubscription: Subscription;
 
   constructor(private productService:ProductService, private authService: AuthService) { }
 
@@ -37,20 +38,24 @@ export class CellphoneComponent implements OnInit {
     });
   }
 
-  getAllProduct(){
-    this.productService.getAllProduct().subscribe(
-      (data:Product[]) => { 
-        this.products = data;
-      }
-    )
-  }
 
   
 
-  sendcart() {
-     alert("Please take product info!!");
-    // let cartitem = new Cart(this.finalPrice,this.cartDate,this.user,this.product);
-    // this.productService.addCartItem(cartitem).subscribe();
-  }
+  // sendcart() {
+    
+  //   console.log(this.isAuth)
+
+  //   if(!this.isAuth){
+  //     this.productService.navigateLogin();
+  //   }else{
+  //      alert(" you are already login ");
+  //   }
+
+  
+    
+  //   // alert("Please take product info!!");
+  //     let cartitem = new Cart(120.00,this.cartDate,this.userObj,this.product);
+  //     this.productService.addCartItem(cartitem).subscribe();
+  // }
 
 }
