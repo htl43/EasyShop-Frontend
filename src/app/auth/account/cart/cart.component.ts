@@ -26,8 +26,7 @@ export class CartComponent implements OnInit {
     let user = this.authService.getUser();
     if(user) {
        this.cartItems = user.userCartItem;
-    }
-    
+    } 
     // this.cartservice.getAllCartItems().subscribe(
     //   (data:Cart[]) => {
     //     this.cartItems = data;
@@ -35,9 +34,9 @@ export class CartComponent implements OnInit {
     // )
   }
 
-  deleteCart(form: NgForm){
-    //TO FILL WITH ADD TO CART FUNCTIONALITY
-    
+  removeItem(cart: any) {
+    console.log("button click");
+    console.log(cart);
   }
 
 }

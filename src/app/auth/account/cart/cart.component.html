@@ -1,45 +1,25 @@
 <h1>Username's Cart</h1>
 
 <div>
-    <table class="center" > *ngIf = "cart.user == ca" What is the correct way to call the User ID?? -->
-        <!-- <tr>
+    <table class="center" >  
+        <tr>
             <th>Product Details:</th>
             <th>Product Name</th>
             <th>Product Description</th>
             <th>Product Price</th>
         </tr>
-        <tr *ngFor = "let cart of cartItems" ([value])="cart">
+        <tr *ngFor = "let cart of cartItems" #cart >
             <td>
                 <img src="../../../assets/cellphone.jpg" alt="Photo of TV Category">
             </td>
-            <td>{{cart.product.productName}}</td>
+            <td >{{cart.product.productName}}</td>
             <td>{{cart.product.description}}</td>
             <td>${{cart.finalPrice}}</td>
-        </tr>  -->
+            <td>
+                <button type="button" style="background-color:burlywood;" (click)="removeItem(cart)">Remove Item</button>
+            </td>
+        </tr> 
 
-    <!-- </table>
+    </table>
 </div>
 <p>({{cartItems}})</p>
-
-<!-- <section class="new-training" fxLayout fxLayoutAlign="center">
-    <form (ngSubmit)="deleteCart(f)" #f="ngForm" >
-      <mat-card fxFlex.xs="100%" fxFlex="400px" >
-        <mat-card-title fxLayoutAlign="center"></mat-card-title>
-        <mat-card-content fxLayoutAlign="center">
-          <mat-form-field ngModel name="cart">
-            <mat-select *ngFor="let cart of cartItems">
-                <div>Produc Name</div>
-                <div>{{cart.product.productName}}</div>
-                <div>Product Description</div>
-                <div>{{cart.product.description}}</div>
-                <div>Product Price</div>
-                <div>${{cart.finalPrice}}</div>
-            </mat-select>
-          </mat-form-field>
-        </mat-card-content>
-        <mat-card-actions fxLayoutAlign="center">
-          <button type="Remove" mat-button [disabled]="f.invalid">Start</button>
-        </mat-card-actions>
-      </mat-card>
-    </form>
-</section> -->
