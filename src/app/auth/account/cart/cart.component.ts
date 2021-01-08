@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { emit } from 'process';
-=======
 import { NgForm } from '@angular/forms';
->>>>>>> f22a24d4fdcb5b41e983a1a6716e5626f70c8c8f
 import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
 import { AuthService } from '../../auth.service';
@@ -38,13 +34,9 @@ export class CartComponent implements OnInit {
     // )
   }
 
-  removeItem(cart: any) {
+  removeItem(cart: Cart) {
     console.log("button click");
     console.log(cart);
-  }
-
-  removeItem(){
-    this.cartservice.removeCartItem(); //how to get the emit() in the method argument
   }
 
 }

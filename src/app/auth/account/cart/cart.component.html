@@ -1,11 +1,7 @@
 <h1>Your Cart has the following items:</h1>
 
 <div>
-<<<<<<< HEAD
-    <table class="center" > <!--*ngIf = "cart.User.getId() == 21"" What is the correct way to call the User ID??-->
-=======
     <table class="center" >  
->>>>>>> f22a24d4fdcb5b41e983a1a6716e5626f70c8c8f
         <tr>
             <th>Product Details:</th>
             <th>Product Name</th>
@@ -13,11 +9,7 @@
             <th>Product Price</th>
             <th></th>
         </tr>
-<<<<<<< HEAD
-        <tr *ngFor = "let cart of cartItems" > <!-- [value]="cart"is this getting the cart id?-->
-=======
         <tr *ngFor = "let cart of cartItems" #cart >
->>>>>>> f22a24d4fdcb5b41e983a1a6716e5626f70c8c8f
             <td>
                 <img src="../../../assets/cellphone.jpg" alt="Photo of TV Category">
             </td>
@@ -25,18 +17,10 @@
             <td>{{cart.product.description}}</td>
             <td>${{cart.finalPrice}}</td>
             <td>
-<<<<<<< HEAD
-                <button type="button" style="background-color:burlywood;" (click)="removeItem()">Remove Item</button>
-=======
                 <button type="button" style="background-color:burlywood;" (click)="removeItem(cart)">Remove Item</button>
->>>>>>> f22a24d4fdcb5b41e983a1a6716e5626f70c8c8f
             </td>
         </tr> 
 
     </table>
-<<<<<<< HEAD
-</div>
-=======
 </div>
 <p>({{cartItems}})</p>
->>>>>>> f22a24d4fdcb5b41e983a1a6716e5626f70c8c8f
