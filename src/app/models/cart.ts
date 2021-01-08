@@ -7,15 +7,13 @@ export class Cart {
     cartId:number;
     finalPrice:number;
     dateAdded:Date;
-    User:User;
     Product:Product
 
-    constructor(cartId:number, finalPrice:number, dateAdded:Date, User:User, Product:Product){
+    constructor(cartId:number, finalPrice:number, dateAdded:Date, Product:Product){
         this.cartId = cartId;
         this.finalPrice = finalPrice;
         this.dateAdded = dateAdded;
-        this.User = User;
         this.Product = Product;
     }
-        
+
 }

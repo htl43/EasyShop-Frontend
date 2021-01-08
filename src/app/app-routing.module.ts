@@ -22,7 +22,7 @@ const routes: Routes = [
     { path: 'cellphone', component: CellphoneComponent },
     { path: 'tv', component: TVComponent },
     { path: 'computer', component: ComputerComponent },
-    { path: 'cart', component: CartComponent }
+    { path: 'cart', component: CartComponent, canActivate: [AuthGuath] }
 ];
 
 @NgModule({
