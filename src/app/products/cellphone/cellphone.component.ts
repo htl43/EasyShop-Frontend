@@ -21,7 +21,7 @@ export class CellphoneComponent implements OnInit {
   @Output() trainingStart = new EventEmitter<void>();
 
   public products:Product[];
-  public cellProduct:Product[];
+  public cellProducts:Product[];
   public cart:Cart;
   public  finalPrice:number;
   public cartDate:Date;
@@ -29,6 +29,8 @@ export class CellphoneComponent implements OnInit {
 
   public product:Product;
   public esUser:User;
+
+  public searchBySizeObj:any;
 
  
  
@@ -39,12 +41,10 @@ export class CellphoneComponent implements OnInit {
   constructor(private productService:ProductService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    
+    this.cellProducts = this.productService.loadProduct();
     this.products = this.productService.loadProduct();
     this.authSubscription = this.authService.authChange.subscribe(authStatus => {
       this.isAuth = authStatus;
-
-     
     });
   }
 
@@ -69,20 +69,44 @@ export class CellphoneComponent implements OnInit {
         (data:Cart) => { this.cart = data; }
         )
        
+        if(true){
         alert(" Item is added successfully !!");
-
         this.productService.navigateCart();
+        }else{
+        alert(" Sorry !! Something Wrong !! please try again ");
+       }
 
     }
 
   }
+ 
+  loadProductsForSearch(){
+    this.cellProducts = this.products;
+  }
+
+  searchBySize(value:any){
 
 
-  searchBySize(product:Product){
+    // let selectProduct:Product[];
+    // selectProduct = this.products.filter(item => item.size.id == value);
+    // console.log(selectProduct);
+
+   
+    this.loadProductsForSearch();
+    let arrayValue = [value];
+    this.productService.storeProduct(arrayValue)
+    this.ngOnInit();
+
+
+    console.log(value);
 
   }
 
-  searchByColor(product:Product){
+  searchByColor(value:any){
+
+    let arrayValue = [value];
+    this.productService.storeProduct(arrayValue)
+    this.ngOnInit();
 
   }
 

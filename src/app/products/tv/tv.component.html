@@ -6,45 +6,47 @@
 
 <div id="search">
 
-<section class="new-training" fxLayout fxLayoutAlign="left" style ="float:left; ">
-  <mat-card fxFlex="400px" fxFlex.xs="100%">
-    <mat-card-title fxLayoutAlign="center">Search Items By Size</mat-card-title >
-    <mat-card-content fxLayoutAlign="center">
-      <mat-form-field>
-        <mat-select placeholder="Pick a size">
-          <mat-option *ngFor="let product of products" #product  [value] ="product.sizeId.id">
-            {{ product.sizeId.sizename }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions fxLayoutAlign="center">
-      <button type="submit" mat-button (click)="searchBySize(product)">Click For Search</button>
-    </mat-card-actions>
-  </mat-card>
-</section>
+    <section class="new-training" fxLayout fxLayoutAlign="left" style ="float:left; ">
+      <mat-card fxFlex="400px" fxFlex.xs="100%">
+        <mat-card-title fxLayoutAlign="center">Search Items By Size</mat-card-title >
+        <mat-card-content fxLayoutAlign="center">
+          <mat-form-field>
+            
+             <mat-select placeholder="Pick a size" (valueChange) = "searchBySize($event)">
+                <div *ngFor="let product of products" >
+                    <mat-option  *ngIf = "product.categoryId.categoryId == 2" [value] ="product">
+                        {{ product.sizeId.sizename }}
+                    </mat-option>
+                </div> 
+             </mat-select>
+       
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    
+    
+    
+    <section class="new-training" fxLayout fxLayoutAlign="center"  style ="display:inline-block; margin-right:10px;"  >
+      <mat-card class = "cell-class" fxFlex="400px" fxFlex.xs="100%">
+        <mat-card-title fxLayoutAlign="center">Search Items By Color</mat-card-title >
+        <mat-card-content fxLayoutAlign="center">
+          <mat-form-field>
 
+            <mat-select placeholder="Pick a Color"   (valueChange) = "searchByColor($event) ">
+                <div *ngFor="let product of products" >
+                    <mat-option  *ngIf = "product.categoryId.categoryId == 2" [value] ="product">
+                        {{ product.colorId.colorName }}
+                    </mat-option>
+                </div>
+            </mat-select>
 
-
-<section class="new-training" fxLayout fxLayoutAlign="center"  style ="display:inline-block; margin-right:10px;"  >
-  <mat-card fxFlex="400px" fxFlex.xs="100%">
-    <mat-card-title fxLayoutAlign="center">Search Items By Color</mat-card-title >
-    <mat-card-content fxLayoutAlign="center">
-      <mat-form-field>
-        <mat-select placeholder="Pick a Color">
-          <mat-option *ngFor="let product of products" #product [value] = "product.colorId.id">
-            {{ product.colorId.colorName }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions fxLayoutAlign="center">
-      <button type="submit" mat-button (click)="searchByColor(product)">Click For Search</button>
-    </mat-card-actions>
-  </mat-card>
-
-</section>
-
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    
+    </section>
+    
 </div>
 
 <div class="products" fxLayoutGap.gt-md="20px" >

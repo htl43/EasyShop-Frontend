@@ -26,3 +26,7 @@ mat-grid-tile {
   button{
     background-color: burlywood;
   }
+
+  .cell-class{
+      background-color: burlywood;
+  }

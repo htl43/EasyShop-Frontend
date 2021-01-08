@@ -16,6 +16,7 @@ export class TVComponent implements OnInit {
   public products:Product[];
   public product:Product;
 
+
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
@@ -33,13 +34,32 @@ export class TVComponent implements OnInit {
   }
 
 
-  searchBySize(product:Product){
+
+
+  searchBySize(value:any){
+
+    
+    // let selectProduct:Product[];
+    // selectProduct = this.products.filter(item => item.size.id == value);
+    // console.log(selectProduct);
+
+    let arrayValue = [value];
+    this.productService.storeProduct(arrayValue)
+    this.ngOnInit();
+
+
+    console.log(value);
 
   }
 
-  searchByColor(product:Product){
+  searchByColor(value:any){
+
+    let arrayValue = [value];
+    this.productService.storeProduct(arrayValue)
+    this.ngOnInit();
 
   }
+
 
 
 

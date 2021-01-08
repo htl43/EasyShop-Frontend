@@ -36,12 +36,6 @@ export class ProductService {
   } 
 
   loadProduct(): Product[] {
-    
-     this.getAllProduct().subscribe(
-      (data:Product[]) => { 
-        this.products = data;
-      }
-    )
     return this.products;
   }
 
