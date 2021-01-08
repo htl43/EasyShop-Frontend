@@ -1,4 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpXsrfTokenExtractor } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cart } from '../models/cart';
@@ -7,6 +8,9 @@ import { Cart } from '../models/cart';
   providedIn: 'root'
 })
 export class CartService {
+
+  public cats:Cart[];
+
   options = {
     headers: new HttpHeaders({
         'Content-Type' : 'application/json'
@@ -20,7 +24,12 @@ export class CartService {
   }
 
   addCartItem():void{
-    
+
+  }
+
+  removeCartItem(cart:Cart): Observable<Cart>{
+    let body: Cart = cart;
+    return this.http.post<Cart>('http://localhost:8080/EasyShop/removeCartItem', body) as Observable<Cart>;
   }
 
 

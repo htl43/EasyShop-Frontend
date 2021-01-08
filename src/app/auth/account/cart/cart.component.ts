@@ -11,7 +11,7 @@ import { User } from '../../authModel/user.model';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit, OnChanges {
+export class CartComponent implements OnInit {
 
   public cartItems:Cart[];
   cartSubcription: Subscription;
@@ -50,7 +50,20 @@ export class CartComponent implements OnInit, OnChanges {
         }
       }
     }
-
   }
+  // removeItem(cart: Cart) {
+  //   console.log("button click");
+  //   console.log(cart);
+  //   let user = this.authService.getUser();
+  //   let id = cart.cartId
+  //       console.log(id);
+  //       console.log(user.userCartItem);
+  //   delete user.userCartItem[id-1];
+  //       console.log(user.userCartItem);
+
+  //  this.getAllCartItems();
+  // }
+
+
 
 }
