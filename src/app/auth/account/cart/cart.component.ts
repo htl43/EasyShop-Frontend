@@ -37,6 +37,17 @@ export class CartComponent implements OnInit {
   removeItem(cart: Cart) {
     console.log("button click");
     console.log(cart);
+    let user = this.authService.getUser();
+    let id = cart.cartId
+    console.log(id);
+    console.log(user.userCartItem);
+    delete user.userCartItem[id-1];
+    //this.cartItems.filter(cart => cart.cartId == id);
+    console.log(user.userCartItem);
+
+   this.getAllCartItems();
   }
+
+
 
 }

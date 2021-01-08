@@ -23,10 +23,9 @@ export class CartService {
 
   }
 
-  removeCartItem(cart:Cart): void{
+  removeCartItem(cart:Cart): Observable<Cart>{
     let body: Cart = cart;
-    this.http.post('http://localhost:8080/EasyShop/removeCartItem') as Observable<Cart>;
-    //this is wrong 
+    return this.http.post<Cart>('http://localhost:8080/EasyShop/removeCartItem', body) as Observable<Cart>;
   }
 
 }
