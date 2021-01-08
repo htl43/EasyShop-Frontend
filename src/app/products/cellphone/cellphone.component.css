@@ -1,24 +1,11 @@
-.float-container {
-    border: 3px solid #fff;
-    padding: 20px;
-}
-
-.float-child {
-    width: 50%;
-    float: left;
-    padding: 20px;
-    border: 2px solid red;
-}
-
-#firstcolumn{
-    width:250px;
-    background-color: lightblue;
-}
-
 #header{
     background-color: lightblue;
     height: 40px;
     padding: 5px 600px;
+}
+
+#search{
+    background-color:white;
 }
 
 
@@ -38,4 +25,8 @@ mat-grid-tile {
   
   button{
     background-color: burlywood;
+  }
+
+  .cell-class{
+      background-color: white;
   }

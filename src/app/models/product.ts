@@ -3,6 +3,7 @@ import {Size} from './size';
 import {Category} from './category';
 
 export class Product {
+    [x: string]: any;
 
     public productId:number;
     public sku:number;

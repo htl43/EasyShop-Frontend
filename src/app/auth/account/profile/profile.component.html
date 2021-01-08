@@ -1,1 +1,33 @@
-<h1>profile works!</h1>
+<section class="profile" fxLayout fxLayoutAlign="center">
+    <mat-card fxFlex="600px" fxFlex.xs="100%">
+      <mat-card-title fxLayoutAlign="center"
+        >Customer Profile</mat-card-title
+      >
+      <mat-card-content *ngIf="contact" fxLayout="column">
+        
+        <div class="profile-detail" fxLayoutAlign="space-evenly">
+            <div>Id:  {{ userId }}</div>
+            <div>Firstname: {{ contact.firstname }}</div>
+            <div>Lastname: {{ contact.lastname }}</div>
+        </div>
+        <div class="profile-detail"  fxLayoutAlign="space-evenly">
+            <div>Email: {{ contact.email }}</div>
+            <div>Phone: {{ contact.phone }}</div>
+        </div>
+        <div class="profile-detail" fxLayoutAlign="space-evenly">
+            <div>Address1: {{ contact.address1 }}</div>
+            <div>Address2: {{ contact.address2 }}</div>
+        </div>
+        <div class="profile-detail" fxLayoutAlign="space-evenly">
+            <div>City: {{ contact.city }}</div>
+            <div>State: {{ contact.state }}</div>
+        </div>
+        <div class="profile-detail" fxLayoutAlign="space-evenly">
+            <div>Zipcode: {{ contact.zipcode }}</div>
+            <div>Country: {{ contact.country }}</div>
+        </div>
+        <p style="color:blue;" fxLayoutAlign="center"> {{msg}} </p>
+      </mat-card-content>   
+    </mat-card>
+  </section>
+  

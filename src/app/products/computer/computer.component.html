@@ -85,7 +85,7 @@
 </div>
 -->
 
-<div id = "header">
+<!-- <div id = "header">
     <h2>Computer Category</h2>
 </div>
 
@@ -106,7 +106,58 @@
       </div>
 
       
+</div> -->
+
+
+<div id = "header">
+    <h1>Computer Category</h1>
 </div>
+
+<div id="search">
+
+    <section class="computer" fxLayout fxLayoutAlign="left" style ="float:left; ">
+      <mat-card fxFlex="400px" fxFlex.xs="100%">
+        <mat-card-title fxLayoutAlign="center">Search Items By Size</mat-card-title >
+        <mat-card-content fxLayoutAlign="center">
+          <mat-form-field>
+            
+             <mat-select placeholder="Pick a size" (valueChange) = "searchBySize($event)">
+                <div *ngFor="let product of products" >
+                    <mat-option  *ngIf = "product.categoryId.categoryId == 3" [value] ="product">
+                        {{ product.sizeId.sizename }}
+                    </mat-option>
+                </div> 
+             </mat-select>
+       
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    
+    
+    
+    <section class="computer" fxLayout fxLayoutAlign="center"  style ="display:inline-block; margin-right:10px;"  >
+      <mat-card class = "cell-class" fxFlex="400px" fxFlex.xs="100%">
+        <mat-card-title fxLayoutAlign="center">Search Items By Color</mat-card-title >
+        <mat-card-content fxLayoutAlign="center">
+          <mat-form-field>
+
+            <mat-select placeholder="Pick a Color"   (valueChange) = "searchByColor($event) ">
+                <div *ngFor="let product of products" >
+                    <mat-option  *ngIf = "product.categoryId.categoryId == 3" [value] ="product">
+                        {{ product.colorId.colorName }}
+                    </mat-option>
+                </div>
+            </mat-select>
+
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    
+    </section>
+    
+</div>
+    
 
 
 <div class="products" fxLayoutGap.gt-md="20px"   >
@@ -121,7 +172,7 @@
                                     <mat-card-title>{{product.productName}}</mat-card-title>
                                     <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
                                 </mat-card-header>
-                                <img mat-card-image src="../../../assets/computerCategory.png" alt="Photo of computer Category">
+                                <img mat-card-image src="../../../assets/laptop.png" alt="Photo of computer Category">
                                 <mat-card-content>
                                     <p class="price">
                                         ${{product.unitPrice}}

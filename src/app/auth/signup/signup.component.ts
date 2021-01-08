@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
         this.authService.registerSuccessfully();
     },
       (err: any) => {
-        this.error = "Can't create account";
+        this.error = "Sorry, can't reate account!";
       }
     );
   }

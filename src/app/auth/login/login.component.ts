@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { User } from '../authModel/user.model';
@@ -8,11 +8,13 @@ import { User } from '../authModel/user.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnChanges {
   loginForm: FormGroup;
-  error: any;
+  mesg: any;
+  color="red";
 
   constructor(private authService: AuthService) {}
+  
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -21,6 +23,14 @@ export class LoginComponent implements OnInit {
       }),
       password: new FormControl('', { validators: [Validators.required] })
     });
+    
+  }
+
+  ngOnChanges(): void {
+    if(this.authService.regMessage) {
+      this.mesg = "Register account successfully";
+      this.color="green";
+    }
   }
 
   onSubmit() {
@@ -32,10 +42,8 @@ export class LoginComponent implements OnInit {
        this.authService.setUser(data);
       },
       (err: any) => {
-        (err: any) => {
-          this.error = "Can't login account";
-        }
-      }
+          this.mesg = "Can't login account. ";
+        } 
     );
   }
 }
