@@ -26,18 +26,31 @@ export class ProductService {
     let body:Cart = cart;
     return this.http.post<Cart>("http://localhost:8080/EasyShop/addToCart",body) as Observable<Cart>
 }
+  
+   
 
+  
   storeProduct(product: Product[]) {
     this.products = product;
     console.log(this.products);
   } 
 
   loadProduct(): Product[] {
+    
+     this.getAllProduct().subscribe(
+      (data:Product[]) => { 
+        this.products = data;
+      }
+    )
     return this.products;
   }
 
   navigateLogin(): void {
     this.router.navigate(['/login']);
+  }
+
+  navigateCart(): void {
+    this.router.navigate(['/cart']);
   }
 
 }

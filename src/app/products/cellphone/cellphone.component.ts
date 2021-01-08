@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Color} from 'src/app/models/color';
 import {Size} from 'src/app/models/size';
 import {Category} from 'src/app/models/category';
@@ -8,6 +8,7 @@ import { Cart } from 'src/app/models/cart';
 import { User } from 'src/app/auth/authModel/user.model';
 import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from 'src/app/auth/auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -17,13 +18,19 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class CellphoneComponent implements OnInit {
 
+  @Output() trainingStart = new EventEmitter<void>();
+
   public products:Product[];
   public cellProduct:Product[];
   public cart:Cart;
-  private finalPrice:number;
-  private cartDate:Date;
-  private user:User;
-  private product:Product;
+  public  finalPrice:number;
+  public cartDate:Date;
+  public productId:number;
+
+  public product:Product;
+  public esUser:User;
+
+ 
  
 
   isAuth = false;
@@ -32,30 +39,51 @@ export class CellphoneComponent implements OnInit {
   constructor(private productService:ProductService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    
     this.products = this.productService.loadProduct();
     this.authSubscription = this.authService.authChange.subscribe(authStatus => {
       this.isAuth = authStatus;
+
+     
     });
   }
 
 
   
 
-  // sendcart() {
-    
-  //   console.log(this.isAuth)
+  sendcart(product:Product) {
 
-  //   if(!this.isAuth){
-  //     this.productService.navigateLogin();
-  //   }else{
-  //      alert(" you are already login ");
-  //   }
+    let user = this.authService.getUser();
 
+    if(!user){
+      alert(" You have not logined in  !! Please login in first before add items in cart !!!");
+      this.productService.navigateLogin();
+    }else{
+      console.log(user)
+      console.log(product);
   
-    
-  //   // alert("Please take product info!!");
-  //     let cartitem = new Cart(120.00,this.cartDate,this.userObj,this.product);
-  //     this.productService.addCartItem(cartitem).subscribe();
-  // }
+       let cartitem = new Cart(product.unitPrice,new Date(),user,product);
+  
+        console.log(cartitem);
+        this.productService.addCartItem(cartitem).subscribe(
+        (data:Cart) => { this.cart = data; }
+        )
+       
+        alert(" Item is added successfully !!");
+
+        this.productService.navigateCart();
+
+    }
+
+  }
+
+
+  searchBySize(product:Product){
+
+  }
+
+  searchByColor(product:Product){
+
+  }
 
 }

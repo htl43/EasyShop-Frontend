@@ -14,6 +14,7 @@ import {ProductService} from 'src/app/services/product.service';
 export class TVComponent implements OnInit {
 
   public products:Product[];
+  public product:Product;
 
   constructor(private productService:ProductService) { }
 
@@ -28,6 +29,15 @@ export class TVComponent implements OnInit {
         this.products = data;
       }
     )
+
+  }
+
+
+  searchBySize(product:Product){
+
+  }
+
+  searchByColor(product:Product){
 
   }
 

@@ -11,6 +11,7 @@ export class ComputerComponent implements OnInit {
 
  
   public products:Product[];
+  public product:Product;
 
   constructor(private productService:ProductService) { }
 
@@ -25,6 +26,15 @@ export class ComputerComponent implements OnInit {
         this.products = data;
       }
     )
+
+  }
+
+
+  searchBySize(product:Product){
+
+  }
+
+  searchByColor(product:Product){
 
   }
 

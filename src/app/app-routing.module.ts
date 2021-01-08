@@ -12,6 +12,7 @@ import { TVComponent } from './products/tv/tv.component';
 import { ComputerComponent } from './products/computer/computer.component';
 import { AccountComponent } from './auth/account/account.component';
 import { CartComponent } from './auth/account/cart/cart.component';
+import { NewTrainingComponent } from './training/new-training/new-training.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
     { path: 'cellphone', component: CellphoneComponent },
     { path: 'tv', component: TVComponent },
     { path: 'computer', component: ComputerComponent },
-    { path: 'cart', component: CartComponent }
+    { path: 'cart', component: CartComponent },
+    
 ];
 
 @NgModule({
