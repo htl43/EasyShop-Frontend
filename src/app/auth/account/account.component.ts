@@ -8,9 +8,11 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  constructor() { }
+  tabIndex:number;
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+    
   }
 
 }

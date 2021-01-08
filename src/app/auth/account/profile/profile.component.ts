@@ -10,8 +10,11 @@ import { Contact } from '../../authModel/contact.model';
 })
 export class ProfileComponent implements OnInit {
   userId: number;
-  contact: Contact
-  constructor(private authService: AuthService) { }
+  contact: Contact;
+  msg:string;
+  constructor(private authService: AuthService) {
+      this.msg = this.authService.updateMessae;
+   }
 
   ngOnInit(): void {
     let user = this.authService.getUser();

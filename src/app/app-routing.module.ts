@@ -12,6 +12,7 @@ import { TVComponent } from './products/tv/tv.component';
 import { ComputerComponent } from './products/computer/computer.component';
 import { AccountComponent } from './auth/account/account.component';
 import { CartComponent } from './auth/account/cart/cart.component';
+import { ProfileComponent } from './auth/account/profile/profile.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
     { path: 'account', component: AccountComponent, canActivate: [AuthGuath] },
+    { path: 'account/profile', component: ProfileComponent, canActivate: [AuthGuath] },
     { path: 'cellphone', component: CellphoneComponent },
     { path: 'tv', component: TVComponent },
     { path: 'computer', component: ComputerComponent },

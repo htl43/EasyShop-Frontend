@@ -6,12 +6,15 @@ import { MatDialog } from '@angular/material/dialog';
 import { LogoutConfirmComponent } from './logout-confirm.component';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Cart } from '../models/cart';
 
 
 @Injectable()
 export class AuthService {
     private user: User;
     regMessage="";
+    updateMessae="";
+    removeMesg="";
     authChange = new Subject<boolean>();
     baseURL="http://localhost:8080/EasyShop";
     options = {
@@ -31,6 +34,11 @@ export class AuthService {
     login(authData: AuthData): Observable<User> {
         let logURL = this.baseURL + "/login";
         return this.http.post<any>(logURL, authData, this.options) as Observable<User>;
+    }
+
+    updateUser(newUser: User): Observable<User> {
+        let upURL = this.baseURL + "/update";
+        return this.http.post<User>(upURL, newUser, this.options) as Observable<User>;
     }
 
     logout(): void {
@@ -69,7 +77,13 @@ export class AuthService {
     }
 
     updateSuccessfully() {
-        this.regMessage = "Update account successful";
-        this.router.navigate(['/account']);
+        this.updateMessae = "Update account successful";
+        this.router.navigate(['/account/profile']);
+    }
+
+    RemoveItem(carts: Cart[]): Observable<User> {
+        this.user.userCartItem = carts;
+        let reURL = this.baseURL + "/remove";
+        return this.http.post<User>(reURL, this.user, this.options) as Observable<User>;
     }
 }
