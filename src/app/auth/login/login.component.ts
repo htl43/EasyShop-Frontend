@@ -10,7 +10,8 @@ import { User } from '../authModel/user.model';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  error: any;
+  mesg: any;
+  color="red";
 
   constructor(private authService: AuthService) {}
 
@@ -21,6 +22,10 @@ export class LoginComponent implements OnInit {
       }),
       password: new FormControl('', { validators: [Validators.required] })
     });
+    if(this.authService.regMessage) {
+      this.mesg = "Register account successfully";
+      this.color="green";
+    }
   }
 
   onSubmit() {
@@ -32,10 +37,8 @@ export class LoginComponent implements OnInit {
        this.authService.setUser(data);
       },
       (err: any) => {
-        (err: any) => {
-          this.error = "Can't login account";
-        }
-      }
+          this.mesg = "Can't login account. ";
+        } 
     );
   }
 }

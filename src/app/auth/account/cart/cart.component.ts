@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
+import { AuthService } from '../../auth.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-cart',
@@ -10,24 +13,40 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
 
   public cartItems:Cart[];
+  cartSubcription: Subscription;
 
-  constructor(private cartservice:CartService) { }
+  constructor(private cartservice:CartService, private authService: AuthService) { }
 
+  cart: Cart;
   ngOnInit(): void {
     this.getAllCartItems();
   }
 
   getAllCartItems(){
-
-    this.cartservice.getAllCartItems().subscribe(
-      (data:Cart[]) => {
-        this.cartItems = data;
-      }
-    )
+    let user = this.authService.getUser();
+    if(user) {
+       this.cartItems = user.userCartItem;
+    } 
+    // this.cartservice.getAllCartItems().subscribe(
+    //   (data:Cart[]) => {
+    //     this.cartItems = data;
+    //   }
+    // )
   }
 
-  addToCart(){
-    //TO FILL WITH ADD TO CART FUNCTIONALITY
+  removeItem(cart: Cart) {
+    console.log("button click");
+    console.log(cart);
+    let user = this.authService.getUser();
+    let id = cart.cartId
+        console.log(id);
+        console.log(user.userCartItem);
+    delete user.userCartItem[id-1];
+        console.log(user.userCartItem);
+
+   this.getAllCartItems();
   }
+
+
 
 }

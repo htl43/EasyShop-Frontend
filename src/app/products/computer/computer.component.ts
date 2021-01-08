@@ -13,11 +13,13 @@ export class ComputerComponent implements OnInit {
   public products:Product[];
   public product:Product;
  
+  public image:any;
 
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
     this.products = this.productService.loadProduct();
+    this.getImage();
   }
 
   getAllProduct(){
@@ -61,4 +63,14 @@ export class ComputerComponent implements OnInit {
   }
 
   
+  getImage(){
+
+    this.productService.getApiImageComputer().subscribe(
+      (data:any) => { 
+        this.image = data;
+      }
+    )
+
+  }
+
 }

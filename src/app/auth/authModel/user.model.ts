@@ -1,3 +1,4 @@
+import { Cart } from "src/app/models/cart";
 import { Contact } from "./contact.model";
 
 
@@ -6,8 +7,8 @@ export class User {
     username: string;
     password: string;
     userContact: Contact;
+    userCartItem: Cart[];
 
-    
     constructor(username:string, password:string, contact:Contact) {
         this.username = username;
         this.password = password;
@@ -20,5 +21,13 @@ export class User {
 
     getId(): number{
         return this.id;
+    }
+
+    setCartItem(carts:Cart[]) {
+        this.userCartItem = carts;
+    }
+
+    getCartItem(): Cart[]{
+        return this.userCartItem;
     }
 }

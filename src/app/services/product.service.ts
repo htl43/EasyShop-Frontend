@@ -47,4 +47,12 @@ export class ProductService {
     this.router.navigate(['/cart']);
   }
 
+  getApiImage():Observable<any>{
+    return this.http.get("https://fakestoreapi.com/products/14") as Observable<any>;
+  }
+
+  getApiImageComputer():Observable<any>{
+    return this.http.get("https://fakestoreapi.com/products/13") as Observable<any>;
+  }
+
 }
