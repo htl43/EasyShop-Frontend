@@ -14,11 +14,13 @@ import {ProductService} from 'src/app/services/product.service';
 export class TVComponent implements OnInit {
 
   public products:Product[];
+  public image:any;
 
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
     this.products = this.productService.loadProduct();
+    this.getImage();
   }
 
   getAllProduct(){
@@ -31,6 +33,15 @@ export class TVComponent implements OnInit {
 
   }
 
+  getImage(){
+
+    this.productService.getApiImage().subscribe(
+      (data:any) => { 
+        this.image = data;
+      }
+    )
+
+  }
 
 
 }
