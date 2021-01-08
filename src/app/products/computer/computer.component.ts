@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Cart } from 'src/app/models/cart';
 
 @Component({
   selector: 'app-computer',
@@ -15,7 +17,7 @@ export class ComputerComponent implements OnInit {
  
   public image:any;
 
-  constructor(private productService:ProductService) { }
+  constructor(private productService:ProductService, private authService:AuthService) { }
 
   ngOnInit(): void {
     this.products = this.productService.loadProduct();
@@ -72,5 +74,41 @@ export class ComputerComponent implements OnInit {
     )
 
   }
+
+
+
+
+
+  sendcart(product:Product) {
+
+    let user = this.authService.getUser();
+
+    if(!user){
+      alert(" You have not logined in  !! Please login in first before add items in cart !!!");
+      this.productService.navigateLogin();
+    }else{
+
+      console.log(user)
+      console.log(product);
+  
+       let cartitem = new Cart(product.unitPrice,new Date(),user,product);
+  
+        console.log(cartitem);
+        this.productService.addCartItem(cartitem).subscribe(
+          (response: any) => {console.log(response)})
+        
+         alert(" Item is added successfully !!");  
+      
+      //   if(Observable){
+      //      alert(" Item is added successfully !!");
+      //      this.productService.navigateCart();
+      //   }else{
+      //     alert(" Sorry !! Something Wrong !! please try again ");
+      //  }
+
+    }
+
+  }
+
 
 }

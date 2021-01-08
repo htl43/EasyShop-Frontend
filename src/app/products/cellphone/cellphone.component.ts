@@ -32,6 +32,8 @@ export class CellphoneComponent implements OnInit {
 
   public searchBySizeObj:any;
 
+  public errorMessage:string;
+
  
  
 
@@ -59,6 +61,7 @@ export class CellphoneComponent implements OnInit {
       alert(" You have not logined in  !! Please login in first before add items in cart !!!");
       this.productService.navigateLogin();
     }else{
+
       console.log(user)
       console.log(product);
   
@@ -66,32 +69,37 @@ export class CellphoneComponent implements OnInit {
   
         console.log(cartitem);
         this.productService.addCartItem(cartitem).subscribe(
-        (data:Cart) => { this.cart = data; }
-        )
-       
-        if(true){
-        alert(" Item is added successfully !!");
-        this.productService.navigateCart();
-        }else{
-        alert(" Sorry !! Something Wrong !! please try again ");
-       }
+          (response: any) => {console.log(response)})
+        
+         alert(" Item is added successfully !!");  
+      
+      //   if(Observable){
+      //      alert(" Item is added successfully !!");
+      //      this.productService.navigateCart();
+      //   }else{
+      //     alert(" Sorry !! Something Wrong !! please try again ");
+      //  }
 
     }
 
   }
+
+  
+
+
  
   loadProductsForSearch(){
     this.cellProducts = this.products;
   }
 
+
+
+
+
+
+
   searchBySize(value:any){
 
-
-    // let selectProduct:Product[];
-    // selectProduct = this.products.filter(item => item.size.id == value);
-    // console.log(selectProduct);
-
-   
     this.loadProductsForSearch();
     let arrayValue = [value];
     this.productService.storeProduct(arrayValue)
