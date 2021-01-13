@@ -23,8 +23,8 @@ export class CartComponent implements OnInit {
     this.getAllCartItems();
   }
 
-  OnChanges(id: number) {
-    return this.cartItems = this.cartItems.filter(cart=> cart.cartId != id);
+  OnChanges(removeCart: Cart) {
+    return this.cartItems = this.cartItems.filter(cart=> cart.cartId != removeCart.cartId);
   }
 
   getAllCartItems(){
@@ -36,17 +36,17 @@ export class CartComponent implements OnInit {
 
   removeItem(cart: any) {
     if(cart) {
-      for(var index in this.cartItems) {
-        if(cart.cartId===this.cartItems[index].cartId) {
-          // let newArray = Object.assign([], this.cartItems);
-          // delete newArray[index];
-          this.cartItems = this.OnChanges(cart.cartId);
-          this.authService.RemoveItem(this.cartItems).subscribe(
-            data => {
-              this.user = data;
-              console.log(this.user);
+      console.log("Get Remove Cart" + JSON.stringify(cart));
+      for(var index in this.cartItems) { 
+        if(cart.cartId==this.cartItems[index].cartId) {
+          let removeCart = cart;
+          this.cartItems = this.OnChanges(removeCart);
+          this.authService.RemoveItem(removeCart).subscribe(
+            (data: Cart) => {
+              console.log("Cart is remove successfully" + data);
             }
-          )   
+          );
+
         }
       }
     }

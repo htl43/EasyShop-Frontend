@@ -81,9 +81,8 @@ export class AuthService {
         this.router.navigate(['/account/profile']);
     }
 
-    RemoveItem(carts: Cart[]): Observable<User> {
-        this.user.userCartItem = carts;
+    RemoveItem(cart: Cart): Observable<Cart> {
         let reURL = this.baseURL + "/remove";
-        return this.http.post<User>(reURL, this.user, this.options) as Observable<User>;
+        return this.http.post<any>(reURL, cart, this.options) as Observable<Cart>;
     }
 }

@@ -27,11 +27,11 @@ export class UpdateComponent implements OnInit {
       this.msg = "Password and Confirm password not match";
     } else {
       let newUser = this.user;
-      if(password!==null) {
+      if(password) {
         newUser.password = password;
         console.log("New User Password=" + newUser.password);
       } else {
-        console.log("old Password=" + newUser.password)
+        console.log("old Password=" + newUser.password);
       }
       if(form.value.firstname) {
         newUser.userContact.firstname = form.value.firstname;
@@ -63,9 +63,7 @@ export class UpdateComponent implements OnInit {
       if(form.value.country) {
         newUser.userContact.country = form.value.country;
       }
-      console.log("Sending Update User=" + newUser);
       this.authService.updateUser(newUser).subscribe((resp: User) => {
-          console.log("User Update get back=" + resp);
           this.authService.setUser(resp);
           this.authService.updateSuccessfully();
       },
