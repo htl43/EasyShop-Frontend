@@ -52,11 +52,13 @@ Central Angular Framwork Includes:
 
 **ER Diagram**
 
-![](./imgs/physical.jpg)
+![](C:\Users\benp3\Downloads\cellphone_category.png)
 
 ## Usage
 
-1. Use Postman to create employee or manager account
+1. Use register functionality to to create customer account
+2. Choose one of the three categories to browse the different items
+3. Use the size or color flex search options to further narrow your results.
 
    ![](./imgs/create.jpg)
 
