@@ -52,13 +52,17 @@ Central Angular Framwork Includes:
 
 **ER Diagram**
 
-![](C:\Users\benp3\Downloads\cellphone_category.png)
+![](./imgs/erd.jpg)
 
 ## Usage
 
-1. Use register functionality to to create customer account
-2. Choose one of the three categories to browse the different items
-3. Use the size or color flex search options to further narrow your results.
+1. Use register functionality to to create customer account.
+2. Login in with your new user credentials or continue to browse without logging in.
+3. Choose one of the three categories to browse the different items.
+4. Use the size or color flex search options to further narrow your results.
+5. Click the "Add to Cart" button to add a product to your shopping cart. Note: if not logged in, you will be redirected to the login page.
+6. Click the cart icon  to view your cart items
+7. If you'd like, click the provided buttons to remove items from your cart.
 
    ![](./imgs/create.jpg)
 
