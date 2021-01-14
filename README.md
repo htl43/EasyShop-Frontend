@@ -64,7 +64,7 @@ Central Angular Framwork Includes:
 6. Click the cart icon  to view your cart items
 7. If you'd like, click the provided buttons to remove items from your cart.
 
-   ![](./imgs/create.jpg)
+   ![](./cellphone_category.png)
 
 ## License
 
