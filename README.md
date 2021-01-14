@@ -33,6 +33,10 @@ Central Angular Framwork Includes:
 - User can add a credit or debit card
 - User can purchase products
 
+**Physical Diagram**
+
+![](./screenshot/physical-diagram.png)
+
 ## Getting Started
 
 1. Clone the frontend project to your local machine
@@ -46,24 +50,29 @@ Central Angular Framwork Includes:
 7. Run `npm serve -o` in terminal to run project
 8. Open [https://localhost:4200](https://localhost:4200) to use the app
 
-**Physical Diagram**
-
-![](./screenshot/physical-diagram.png)
-
 ## Usage
 
 1. Use register functionality to to create customer account.
+
    ![](./screenshot/register.png)
+
 2. Login in with your new user credentials or continue to browse without logging in.
+
    ![](./screenshot/es_login.png)
    ![](./screenshot/login.png)
+
 3. Choose one of the three categories to browse the different items.
 4. Use the size or color flex search options to further narrow your results.
 5. Click the "Add to Cart" button to add a product to your shopping cart. Note: if not logged in, you will be redirected to the login page.
+
    ![](./screenshot/es_login_error.png)
+
 6. Click the cart icon to view your cart items
+
    ![](./screenshot/cellphone_category.png)
+
 7. If you'd like, click the provided buttons to remove items from your cart.
+
    ![](./screenshot/es_view_cart.png)
 
 ## License
