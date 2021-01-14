@@ -1,4 +1,4 @@
-# Employee Reimbursment System (ERS)
+# EasyShop-Frontend
 
 ## Executive Summary
 
